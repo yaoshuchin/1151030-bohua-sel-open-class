@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 石柏華公開觀議課 - 核心資料庫 (siteData)
  * 南投縣立南投國中 115學年度 專任輔導教師石柏華 · SEL社會情緒學習公開授課與議課研討成果旗艦網
  */
@@ -25,58 +25,205 @@ const siteData = {
     ],
     metrics: [
       { num: "45", unit: "分鐘", label: "公開教學演示實況", desc: "完整經歷情緒覺察、呼吸放鬆與情境演練" },
-      { num: "35", unit: "張", label: "現場高畫質實況圖輯", desc: "記錄小組討論、師生互動與深思專注片刻" },
-      { num: "4.3", unit: "萬字", label: "議課逐字稿精華沉澱", desc: "專家委員、主任與觀課夥伴傾囊相授" },
-      { num: "4", unit: "大維度", label: "教學精進優化策略", desc: "教學表現、班級經營、活動引導、教材修整" }
+      { num: "21", unit: "頁", label: "上課投影片線上播放", desc: "情緒導航手冊精編全彩簡報播放器" },
+      { num: "3", unit: "關", label: "情緒防爆三關挑戰賽", desc: "身體慢速放氣、想法拆彈、行為戰術登出" },
+      { num: "4.3", unit: "萬字", label: "議課逐字稿精華沉澱", desc: "主任、教授與觀課夥伴傾囊相授" }
     ]
   },
 
-  curriculum: {
-    overview: "本課程以 SEL (Social and Emotional Learning, 社會情緒學習) 為核心架構，針對國中學生在學業、人際與同儕互動中常見的「焦慮、緊張、理智斷線、衝動反應」等現實困擾，設計系統化的三階段《情緒防爆指南》。",
-    selPillars: [
-      { title: "自我覺察 (Self-Awareness)", desc: "辨識生理警訊（心跳加快、手心出汗、肌肉緊繃）與情緒強度標記。", color: "rose" },
-      { title: "自我管理 (Self-Management)", desc: "熟練 4-7-8 腹式深呼吸、暫停煞車機制與自動化負向思考轉念。", color: "amber" },
-      { title: "社會覺察 (Social Awareness)", desc: "同理他人在情境中的處境，辨識言語對同儕人際關係的長期影響。", color: "emerald" },
-      { title: "人際技巧 (Relationship Skills)", desc: "運用合宜、不傷己傷人的溝通替代行為，表達內心受傷與需求。", color: "sky" },
-      { title: "負責任決策 (Responsible Decision-Making)", desc: "在情緒警報高漲時預測行為後果，做出對自己與他人雙贏之行動。", color: "indigo" }
-    ],
-    stages: [
+  // ==========================================
+  // 教案詳細說明 (依據 教學計劃（石伯華教案）.pdf)
+  // ==========================================
+  lessonPlan: {
+    title: "情緒調節－不爆彈計畫（氣球）",
+    subject: "綜合活動領域 輔導科",
+    instructor: "石柏華 老師",
+    target: "國中八年級（國二）",
+    duration: "4 節課，共 180 分鐘（本次公開演示為第四堂課「情緒調節」45分鐘）",
+    concept: "本課程以國中生的日常生活與人際互動為出發點，結合社會情緒學習（SEL）的理念，透過「覺察情緒、辨別情緒、理解情緒升溫、調節情緒」四個循序漸進的階段，引導學生從認識自己的內在狀態，進一步學習理解他人，並發展適切的情緒因應能力。在數位社群普及、同儕互動頻繁的現代生活中，學生可能因為訊息已讀不回、社群媒體上的比較、網路嘲諷、同儕排擠或課業壓力而產生情緒起伏。因此，本課程將這些貼近國中生生活的情境融入教學，讓學生理解：情緒不是需要被壓抑的問題，而是值得被理解的訊號；重要的不只是感受到什麼，更是如何理解情緒，並選擇適當的回應方式。",
+    coreCompetencies: {
+      domain: "A 自主行動 ｜ ⬛ A1 身心素質與自我精進",
+      performance: "1d-IV-1 覺察個人的心理困擾與影響因素，運用適當策略或資源，促進心理健康。",
+      contents: [
+        { code: "輔Da-IV-1", desc: "正向思考模式、生活習慣與態度的培養" },
+        { code: "輔Da-IV-2", desc: "情緒與壓力的成因、影響與因素" },
+        { code: "輔Db-IV-2", desc: "重大心理困擾與失落經驗的因應" }
+      ]
+    },
+    fourLessons: [
       {
-        step: "第一階段",
-        badge: "情緒雷達 · 警訊覺察",
-        title: "認識情緒警報器與身體晴雨表",
-        duration: "10 分鐘",
-        goals: "引導學生覺察情緒來臨前身體發出的第一道警訊（如握拳、胸悶、發抖）。",
-        activities: [
-          "生活情境影片導入：觀察同儕發生衝突時的瞬間生理徵兆",
-          "情緒溫度計刻度標示：從平靜 (0-2) 到緊繃 (3-6) 到即將爆炸 (7-10)",
-          "學習單實作：記錄自己在遇到「被誤會」或「比賽失利」時身體哪裡最先緊繃"
+        lesson: "第一堂課",
+        theme: "覺察情緒",
+        activity: "辨識情緒 · 身體訊號",
+        goals: [
+          "1-1 學生能覺察並描述自己的情緒。",
+          "1-2 學生能辨識情緒的身體訊號，並連結事件、情緒與行為反應。",
+          "1-3 學生能理解情緒與行為的差異，建立接納情緒的觀念。"
         ]
       },
       {
-        step: "第二階段",
-        badge: "腦科學解密 · 理智拔河",
-        title: "大腦指揮官與警報器的對決",
-        duration: "15 分鐘",
-        goals: "用科學趣味視角拆解為什麼「常常理智斷線」，化解對衝動行為的自責感。",
-        activities: [
-          "杏仁核 (Amygdala) vs 前額葉皮質 (Prefrontal Cortex) 角色擬人化",
-          "「三秒鐘理智斷線」模擬：當警報器蓋過思考腦時會發生什麼事？",
-          "小組合作思考：生活中有哪些情況讓我們的前額葉瞬間下線？"
+        lesson: "第二堂課",
+        theme: "情緒強度",
+        activity: "教室站位 · 情緒溫度計",
+        goals: [
+          "2-1 學生能辨識並說出不同情境中的情緒。",
+          "2-2 學生能運用情緒溫度計評估情緒強度（0~10分）。",
+          "2-3 學生能理解情緒感受與強度的個別差異。"
         ]
       },
       {
-        step: "第三階段",
-        badge: "策略導航 · 煞車與轉念",
-        title: "4-7-8 呼吸定心與想法不加料",
-        duration: "20 分鐘",
-        goals: "建立生理煞車（4-7-8呼吸）與認知煞車（想法路徑轉念），產出合宜替代行為。",
-        activities: [
-          "4-7-8 呼吸實作練習：吸氣 4 秒、屏息 7 秒、吐氣 8 秒，啟動副交感神經",
-          "辨識「想法加料」：把『他一定是故意的』轉為『他也許只是不小心』",
-          "綜合演練與課堂收束：三大情緒防爆金鑰（覺察訊號、呼吸煞車、轉念導航）"
+        lesson: "第三堂課",
+        theme: "理解情緒",
+        activity: "戳破氣球 · 觸發因素分析",
+        goals: [
+          "3-1 學生能理解日常壓力與當下事件對情緒強度的影響。",
+          "3-2 學生能辨識情緒觸發因素，並分析情緒升溫的原因。",
+          "3-3 學生能理解他人的情緒差異，培養同理與尊重的態度。"
+        ]
+      },
+      {
+        lesson: "第四堂課（公開課）",
+        theme: "情緒調節",
+        activity: "不爆彈計畫 · 防爆三關挑戰賽",
+        goals: [
+          "4-1 學生能運用身體放鬆、想法轉換及行為調整等策略調節情緒。",
+          "4-2 學生能區分客觀事實與個人解讀，嘗試以不同觀點看待事件。",
+          "4-3 學生能在情緒強烈時適時暫停，減少衝動行為並做出適當回應。"
         ]
       }
+    ],
+    demoProcedure: [
+      {
+        section: "一、課前回顧",
+        time: "2 分鐘",
+        desc: "教師複習前三堂課核心：第一堂辨識情緒、第二堂教室站位量測強度、第三堂戳破氣球體會壓力累積，今天進入第四堂實戰調節技巧。",
+        remark: "學習單已發放於學生桌上"
+      },
+      {
+        section: "二、引起動機：破除誤區",
+        time: "3 分鐘",
+        desc: "國中生常以為情緒調節就是「忍耐、認輸、當縮頭烏龜」。老師點破：「調節是讓你在不爽的時候，還能帥氣地控制場面，不讓自己因為爆掉而變成理虧、被記過的那個人！」並正式引入「調節三條路」——身體、想法、行為安全放氣。",
+        remark: "給予1分鐘填寫學習單「一、我的情緒警報」"
+      },
+      {
+        section: "三、第一關：身體的路 ｜ 終極慢速放氣",
+        time: "7 分鐘",
+        desc: "氣球直接鬆手會亂飛失控，慢慢捏著氣球嘴放氣才平穩。帶領全班進行 3 次「4-7-8 呼吸法」（吸氣4秒、憋氣7秒、慢吐8秒），進行『物理降溫』，關掉大腦過熱警報器。",
+        remark: "臨床實證：4-7-8呼吸法能有效刺激副交感神經，改善心率變異度(HRV)並降低皮質醇"
+      },
+      {
+        section: "四、第二關：想法的路 ｜ 地雷拆除大師",
+        time: "15 分鐘",
+        desc: "撕掉大腦裡自己加的料，氣球就不會大得那麼快！\n1. 示範案例：王小美生日送卡片被當眾潑冷水（事實 vs 加料想法『他故意瞧不起我』vs 拆彈安全想法『他可能只是害羞裝酷』）。老師點撥：「不要用別人的不成熟，懲罰你珍貴的善良。」\n2. 六組實作情境演練（退追蹤已讀不回、爸媽拿去比較、被老師連帶處分、分組同學不參與、考試考差、朋友IG發文指責）並指派代表發表。",
+        remark: "小組討論5分鐘，代表口頭發表各1分鐘，填寫學習單第二關"
+      },
+      {
+        section: "五、第三關：行為的路 ｜ 戰術登出",
+        time: "8 分鐘",
+        desc: "當氣球快爆時，最好的方式是暫時放下它、物理隔離、換個環境！當情緒高達8分時，戰術性離開現場 10 秒鐘（聽音樂、找人聊聊、運動、抱娃娃、嚕貓狗、洗把臉），保住理智，不讓自己後悔。",
+        remark: "填寫學習單第三關行為選擇"
+      },
+      {
+        section: "六、綜合活動：課堂總結",
+        time: "5 分鐘",
+        desc: "學生分享收穫：透過深呼吸平穩、透過拆彈往好的方向想、透過戰術登出避免衝動。教師歸納情緒防爆三大金鑰：① 覺察情緒，是調節的第一步；② 運用方法，讓情緒回到平衡；③ 持續練習，活出自在的自己！",
+        remark: "收回學習單，統計小組總分並表揚"
+      }
+    ],
+    literatureNote: "4-7-8 呼吸法實證依據：臨床實驗顯示，規律練習 4-7-8 呼吸法能顯著激活副交感神經、改善心率變異度（HRV），並有效降低人體皮質醇水準（Geethanjali et al., 2022; Kahraman & Ozdemir, 2023）。"
+  },
+
+  // ==========================================
+  // 上課簡報播放器資料 (21 頁全彩投影片)
+  // ==========================================
+  slides: [
+    { num: 1, title: "情緒調節－不爆彈計畫", category: "單元首頁", img: "images/slides/slide_01.jpg", notes: "本單元《情緒調節－不爆彈計畫》封面，確立做情緒主人的核心理念。" },
+    { num: 2, title: "課前回顧：前三堂課歷程", category: "課前回顧", img: "images/slides/slide_02.jpg", notes: "複習第一堂辨識情緒、第二堂教室站位強度、第三堂戳破氣球體會壓力累積。" },
+    { num: 3, title: "打破誤區：調節不是忍耐", category: "引起動機", img: "images/slides/slide_03.jpg", notes: "調節不是認輸或當縮頭烏龜，而是在不爽時能帥氣控制場面，不變成理虧被記過的人。" },
+    { num: 4, title: "核心概念：調節三條路", category: "引起動機", img: "images/slides/slide_04.jpg", notes: "在氣球爆開前，透過「身體、想法、行為」三條路徑主動安全放氣。" },
+    { num: 5, title: "第一關：身體的路 ｜ 慢速放氣", category: "第一關：身體", img: "images/slides/slide_05.jpg", notes: "氣球慢慢放氣才能平順，引入 4-7-8 呼吸法進行身體物理降溫。" },
+    { num: 6, title: "4-7-8 呼吸法實作步驟", category: "第一關：身體", img: "images/slides/slide_06.jpg", notes: "吸氣4秒（鼻子）、懸氣7秒（屏息）、吐氣8秒（嘴巴），連續進行3次。" },
+    { num: 7, title: "生理降溫的科學原理", category: "第一關：身體", img: "images/slides/slide_07.jpg", notes: "臨床實證副交感神經被激活，心跳減緩、肌肉放鬆，大腦警報器強制關閉。" },
+    { num: 8, title: "第二關：想法的路 ｜ 地雷拆除", category: "第二關：想法", img: "images/slides/slide_08.jpg", notes: "撕掉大腦裡自己加的料，區分客觀事實與主觀加料想法。" },
+    { num: 9, title: "示範情境：送生日卡片被潑冷水", category: "第二關：想法", img: "images/slides/slide_09.jpg", notes: "小美當眾說卡片很俗，旁人笑成一團。分析事實 vs 會讓人爆炸的加料想法。" },
+    { num: 10, title: "拆彈三步驟：事實・加料・安全", category: "第二關：想法", img: "images/slides/slide_10.jpg", notes: "示範如何將「他故意羞辱我」轉化為「他可能害羞裝酷，旁人只是被逗笑」。" },
+    { num: 11, title: "老師點撥：決定權在你手中", category: "第二關：想法", img: "images/slides/slide_11.jpg", notes: "「不要用別人的不成熟，來懲罰你珍貴的善良！」" },
+    { num: 12, title: "小組討論：六大生活情境分組", category: "小組演練", img: "images/slides/slide_12.jpg", notes: "各組領取貼近國中生日常的真實情境，於5分鐘內合作完成地雷拆除。" },
+    { num: 13, title: "情境演練：退追蹤與比較情境", category: "小組演練", img: "images/slides/slide_13.jpg", notes: "第一組（退追蹤已讀不回）、第二組（被爸媽拿去與別人比較）深度探討。" },
+    { num: 14, title: "情境演練：連帶處分與組員擺爛", category: "小組演練", img: "images/slides/slide_14.jpg", notes: "第三組（無辜被連帶處分）、第四組（分組報告同組同學不參與）拆彈成果。" },
+    { num: 15, title: "情境演練：考試考差與IG被罵", category: "小組演練", img: "images/slides/slide_15.jpg", notes: "第五組（準備好久考差了）、第六組（好友發IG說爛人）之安全轉念。" },
+    { num: 16, title: "第三關：行為的路 ｜ 戰術登出", category: "第三關：行為", img: "images/slides/slide_16.jpg", notes: "當氣球快爆開時，最好的策略是暫時放下、物理隔離、換個環境。" },
+    { num: 17, title: "戰術登出的多樣化錦囊", category: "第三關：行為", img: "images/slides/slide_17.jpg", notes: "聽音樂、找人聊聊、運動、抱娃娃、嚕貓狗、洗把臉，給自己10秒冷靜。" },
+    { num: 18, title: "戰術性登出：保住理智不後悔", category: "第三關：行為", img: "images/slides/slide_18.jpg", notes: "離開現場10秒鐘，保住理智，不讓衝動造成無法挽回的人際傷害。" },
+    { num: 19, title: "課堂總結：三大防爆金鑰", category: "總結收束", img: "images/slides/slide_19.jpg", notes: "① 覺察情緒是第一步；② 運用方法回到平衡；③ 持續練習活出自在。" },
+    { num: 20, title: "學習單填寫與成果收束", category: "總結收束", img: "images/slides/slide_20.jpg", notes: "核對情緒防爆三關挑戰賽學習單，小組互評與分數結算。" },
+    { num: 21, title: "做自己情緒的主人！", category: "結語致謝", img: "images/slides/slide_21.jpg", notes: "感謝全班同學的勇於分享，讓情緒成為人生持續成長的最好助力！" }
+  ],
+
+  // ==========================================
+  // 情緒防爆三關挑戰賽 (互動學習單題庫與設定)
+  // ==========================================
+  challenge: {
+    title: "情緒防爆三關挑戰賽",
+    motto: "情緒調節不是忍耐，是把控制權拿回來",
+    emotions: [
+      { name: "委屈", color: "sky" },
+      { name: "生氣", color: "rose" },
+      { name: "焦慮", color: "amber" },
+      { name: "沮喪", color: "indigo" },
+      { name: "緊張", color: "purple" },
+      { name: "不爽", color: "red" },
+      { name: "無奈", color: "slate" },
+      { name: "平靜", color: "emerald" }
+    ],
+    bodyAlarms: [
+      { id: "heart", label: "心跳加速" },
+      { id: "breath", label: "呼吸變快" },
+      { id: "chest", label: "胸口悶" },
+      { id: "body", label: "身體僵硬" },
+      { id: "shoulder", label: "肩膀緊" },
+      { id: "cry", label: "想哭" },
+      { id: "shout", label: "想叫" }
+    ],
+    presetScenarios: [
+      {
+        title: "情境一：被同學退追蹤 / 已讀不回",
+        event: "傳訊息問功課，同學已讀不回，後來發現他還退了我 IG 追蹤。",
+        toxicThought: "他一定是討厭我！在背後搞排擠，根本沒把我當朋友！",
+        safeThought: "退追蹤可能只是他在整理帳號，已讀不回也許正在忙。我不用把別人的社群舉動完全怪到自己身上。"
+      },
+      {
+        title: "情境二：被爸媽拿去跟別人比較",
+        event: "段考成績公布，爸媽看了嘆氣說：『你看隔壁小明都考前三名，你怎麼就不學學人家？』",
+        toxicThought: "反正我怎麼努力你們都不滿意！你們只喜歡別人家的小孩，根本不愛我！",
+        safeThought: "爸媽表達方式很笨拙，但他們只是焦慮我的未來；我有我自己的進步節奏，不需要拿別人的標準否定自己。"
+      },
+      {
+        title: "情境三：分組報告同組同學不參與",
+        event: "老師規定這週要交報告，同組同學都在聊天滑手機，完全不幫忙做 PPT。",
+        toxicThought: "這些人都想搭便車！憑什麼都是我一個人在累？全部都給我去死好了！",
+        safeThought: "他們可能不知道該做什麼，或者逃避作業；我可以直接明確分配一人做一頁，若真的不做就據實回報老師，不需自己悶著爆炸。"
+      },
+      {
+        title: "情境四：送好友禮物被潑冷水",
+        event: "用心熬夜手作生日卡片送好友，他卻隨手塞進書包說：『現在誰還寫卡片啊？很俗耶！』",
+        toxicThought: "我的真心被踐踏了！他根本不配當我朋友，故意讓我難堪！",
+        safeThought: "他可能在大家面前害羞、故意講垃圾話裝酷；不要用別人的不成熟，來懲罰自己珍貴的善良。"
+      },
+      {
+        title: "情境五：準備好久的考試考砸了",
+        event: "每天熬夜苦讀準備數學段考，結果成績發下來只有 52 分，不及格。",
+        toxicThought: "我就是笨蛋、智商低！再怎麼努力都沒有用，我徹底完蛋了！",
+        safeThought: "這次考差只代表這幾個單元還沒搞懂，不代表我整個人是失敗者；去問老師哪裡算錯，把洞補起來就好。"
+      }
+    ],
+    logoutBehaviors: [
+      { id: "music", icon: "music", label: "聽音樂放鬆" },
+      { id: "diary", icon: "book-open", label: "寫心情日記" },
+      { id: "talk", icon: "phone-call", label: "找信任的人聊聊" },
+      { id: "sport", icon: "activity", label: "去操場跑步或運動" },
+      { id: "pet", icon: "heart", label: "抱娃娃 / 嚕貓嚕狗" },
+      { id: "water", icon: "droplets", label: "喝一杯溫水 / 洗把臉" }
     ]
   },
 
@@ -130,321 +277,41 @@ const siteData = {
   ],
 
   gallery: [
-    {
-      id: "img-7832",
-      src: "images/IMG_7832.jpg",
-      raw: "影音/IMG_7832.jpg",
-      title: "公開課破冰暖身：引起動機與目標說明",
-      category: "intro",
-      catName: "課堂引起動機",
-      desc: "柏華老師以親切溫和的語調開啟課程，向全班說明今天的主題《情緒防爆指南》與上課小組規則。"
-    },
-    {
-      id: "img-7836",
-      src: "images/IMG_7836.jpg",
-      raw: "影音/IMG_7836.jpg",
-      title: "建立專注默契：師生互動與眼神交流",
-      category: "intro",
-      catName: "課堂引起動機",
-      desc: "透過清晰指令讓學生迅速安定注意力，營造安全且具包容性的學習氛圍。"
-    },
-    {
-      id: "img-7838",
-      src: "images/IMG_7838.jpg",
-      raw: "影音/IMG_7838.jpg",
-      title: "情緒簡報投影片導讀：情緒是什麼？",
-      category: "intro",
-      catName: "課堂引起動機",
-      desc: "引導學生回想上週面對考試或被同學開玩笑時的情緒感受，啟動自我覺察感知。"
-    },
-    {
-      id: "img-7842",
-      src: "images/IMG_7842.jpg",
-      raw: "影音/IMG_7842.jpg",
-      title: "觀課教師團隊專注紀錄現場節奏",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "許主任、指導教授與觀課夥伴在教室後方認真記錄教師提問、學生發言與時間節奏配置。"
-    },
-    {
-      id: "img-7844",
-      src: "images/IMG_7844.jpg",
-      raw: "影音/IMG_7844.jpg",
-      title: "課堂口令互動：3-2-1 默契凝聚",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "全班以高昂默契回應教師指令，現場學習動能充沛，學生舉手踴躍。"
-    },
-    {
-      id: "img-7859",
-      src: "images/IMG_7859.jpg",
-      raw: "影音/IMG_7859.jpg",
-      title: "教師走入組別進行個別引導",
-      category: "group",
-      catName: "小組討論巡視",
-      desc: "分組活動展開，柏華老師巡視各組走道，俯身聆聽學生的疑難並及時提供回饋。"
-    },
-    {
-      id: "img-7860",
-      src: "images/IMG_7860.jpg",
-      raw: "影音/IMG_7860.jpg",
-      title: "學生認真辨識情緒警報卡",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "學生翻閱情緒學習單，在「身體警訊」項目中勾選心跳加快、手心冰冷或冒汗等特徵。"
-    },
-    {
-      id: "img-7867",
-      src: "images/IMG_7867.jpg",
-      raw: "影音/IMG_7867.jpg",
-      title: "小組討論：我們怎麼面對生氣的時候？",
-      category: "group",
-      catName: "小組討論巡視",
-      desc: "組員彼此交流在生氣當下會想做的事情，有人分享想打枕頭、有人想聽音樂或去操場跑圈。"
-    },
-    {
-      id: "img-7869",
-      src: "images/IMG_7869.jpg",
-      raw: "影音/IMG_7869.jpg",
-      title: "同儕共學：互相核對情緒強度指數",
-      category: "group",
-      catName: "小組討論巡視",
-      desc: "組內同學互相分享彼此的情緒溫度計數值，發現每個人對壓力的敏感點各有不同。"
-    },
-    {
-      id: "img-7878",
-      src: "images/IMG_7878.jpg",
-      raw: "影音/IMG_7878.jpg",
-      title: "舉手踴躍發言：分享組內研討成果",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "前排與側邊組別學生主動舉手爭取發表，課堂參與度極高，展現良好的學習動機。"
-    },
-    {
-      id: "img-7879",
-      src: "images/IMG_7879.jpg",
-      raw: "影音/IMG_7879.jpg",
-      title: "教師正向回饋與課堂加分鼓勵",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "柏華老師肯定學生的具體分享，給予即時正向讚美與小組得分獎勵。"
-    },
-    {
-      id: "img-7882",
-      src: "images/IMG_7882.jpg",
-      raw: "影音/IMG_7882.jpg",
-      title: "大腦杏仁核腦科學概念解說",
-      category: "intro",
-      catName: "課堂引起動機",
-      desc: "老師運用投影片插圖講解大腦杏仁核就像火警警報器，幫助學生以科學態度面對情緒起伏。"
-    },
-    {
-      id: "img-7885",
-      src: "images/IMG_7885.jpg",
-      raw: "影音/IMG_7885.jpg",
-      title: "巡視第二組：協助釐清想法加料與客觀事實",
-      category: "group",
-      catName: "小組討論巡視",
-      desc: "引導學生區分『他看我一眼（事實）』與『他一定在瞧不起我（想法加料）』的關鍵差異。"
-    },
-    {
-      id: "img-7886",
-      src: "images/IMG_7886.jpg",
-      raw: "影音/IMG_7886.jpg",
-      title: "各組專注熱烈討論情境案例",
-      category: "group",
-      catName: "小組討論巡視",
-      desc: "不同組別成員全心投入，紙筆記錄著各自的情境解決策略。"
-    },
-    {
-      id: "img-7887",
-      src: "images/IMG_7887.jpg",
-      raw: "影音/IMG_7887.jpg",
-      title: "學生分享真實校園生活經驗",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "學生立足座位面向全班，勇敢分享自己在分組合作時曾產生的委屈與因應轉念。"
-    },
-    {
-      id: "img-7893",
-      src: "images/IMG_7893.jpg",
-      raw: "影音/IMG_7893.jpg",
-      title: "4-7-8 呼吸練習示範與實體帶領",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "柏華老師帶領全班放鬆肩膀，進行吸氣 4 秒、屏氣 7 秒、慢吐 8 秒的身心調息實作。"
-    },
-    {
-      id: "img-7894",
-      src: "images/IMG_7894.jpg",
-      raw: "影音/IMG_7894.jpg",
-      title: "全班閉目調息：感受副交感神經安定",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "教室在輕柔的音樂中瞬間沉靜，學生閉上雙眼專注體會氣息出入與肌肉鬆弛。"
-    },
-    {
-      id: "img-7896",
-      src: "images/IMG_7896.jpg",
-      raw: "影音/IMG_7896.jpg",
-      title: "呼吸練習後的感受核對與回饋",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "呼吸練習結束後，引導學生在學習單上寫下『呼吸前與呼吸後身體感覺的差別』。"
-    },
-    {
-      id: "img-7897",
-      src: "images/IMG_7897.jpg",
-      raw: "影音/IMG_7897.jpg",
-      title: "書寫深思：記錄我的情緒煞車錦囊",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "學生在學習單上認真勾勒屬於自己的情緒急救三部曲，筆觸專注認真。"
-    },
-    {
-      id: "img-7899",
-      src: "images/IMG_7899.jpg",
-      raw: "影音/IMG_7899.jpg",
-      title: "組間觀摩與共學討論",
-      category: "group",
-      catName: "小組討論巡視",
-      desc: "學生彼此閱讀同組同學寫下的安全想法，從中獲得不同視角的解決靈感。"
-    },
-    {
-      id: "img-7900",
-      src: "images/IMG_7900.jpg",
-      raw: "影音/IMG_7900.jpg",
-      title: "學習單成果檢視與個別鼓勵",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "老師巡至後排，低聲給予害羞學生肯定，鼓勵其待會小組分享時勇敢唸出自己的答案。"
-    },
-    {
-      id: "img-7912",
-      src: "images/IMG_7912.jpg",
-      raw: "影音/IMG_7912.jpg",
-      title: "全班性提問與想法引導",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "柏華老師以開放式問答『如果這時我們回罵過去，結果會變得如何？』引發全班批判性思維。"
-    },
-    {
-      id: "img-7919",
-      src: "images/IMG_7919.jpg",
-      raw: "影音/IMG_7919.jpg",
-      title: "同儕積極補充：更多元的安全替代做法",
-      category: "interaction",
-      catName: "師生互動加分",
-      desc: "其他同學舉手補充：『可以先喝一口水、或是離開現場去洗手間洗一把臉！』"
-    },
-    {
-      id: "img-7920",
-      src: "images/IMG_7920.jpg",
-      raw: "影音/IMG_7920.jpg",
-      title: "黑板板書與重點歸納統整",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "教師在黑板上逐步條列學生發表的關鍵字，幫助視覺型學習者加深記憶。"
-    },
-    {
-      id: "img-7932",
-      src: "images/IMG_7932.jpg",
-      raw: "影音/IMG_7932.jpg",
-      title: "整節課堂核心回顧：做自己情緒的主人",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "課程進入尾聲，老師邀請各組代表說出今天收穫最多的一個觀念，再次扣回情緒防爆三大金鑰。"
-    },
-    {
-      id: "img-7934",
-      src: "images/IMG_7934.jpg",
-      raw: "影音/IMG_7934.jpg",
-      title: "下課前的小組總結算與感謝致意",
-      category: "worksheet",
-      catName: "學習單填寫與深思",
-      desc: "公布課堂小組積分，全班以熱烈掌聲感謝彼此的投入與觀課師長的陪伴。"
-    },
-    {
-      id: "img-7942",
-      src: "images/IMG_7942.jpg",
-      raw: "影音/IMG_7942.jpg",
-      title: "議課會議開始：許主任主持與致詞",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "觀課後立即於專題會議室展開議課，許主任肯定公開課的整體流暢度與進度掌控。"
-    },
-    {
-      id: "img-7945",
-      src: "images/IMG_7945.jpg",
-      raw: "影音/IMG_7945.jpg",
-      title: "指導教授針對教案結構深入回饋",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "教授就情緒警報選項光譜、評量欄位細節及提問深探策略給予高階專業建言。"
-    },
-    {
-      id: "img-7947",
-      src: "images/IMG_7947.jpg",
-      raw: "影音/IMG_7947.jpg",
-      title: "李協融老師分享班級經營實戰技巧",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "李老師傳授『照相機定格口令』與加分標準透明化的現場實務經驗，助益良多。"
-    },
-    {
-      id: "img-7952",
-      src: "images/IMG_7952.jpg",
-      raw: "影音/IMG_7952.jpg",
-      title: "孫雅惠老師回饋課堂節奏與呼吸練習",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "孫老師盛讚柏華老師的台風與語速，並細膩指出呼吸法節奏與思考留白的優化細節。"
-    },
-    {
-      id: "img-7955",
-      src: "images/IMG_7955.jpg",
-      raw: "影音/IMG_7955.jpg",
-      title: "柏華老師虛心記錄各方建言與反思",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "授課教師逐筆記錄專家前輩的建議，坦誠分享設計初衷與現場感受，氣氛融洽溫馨。"
-    },
-    {
-      id: "img-7960",
-      src: "images/IMG_7960.jpg",
-      raw: "影音/IMG_7960.jpg",
-      title: "議課研討聚焦教案修改與後續行動",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "研討確立後續教案精進重點：擴充平靜選項、放大投影片字體、並爭取代課實戰磨練。"
-    },
-    {
-      id: "img-7964",
-      src: "images/IMG_7964.jpg",
-      raw: "影音/IMG_7964.jpg",
-      title: "觀課夥伴熱烈交流與跨科對話",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "輔導活動與學科領域教師針對學生身心健康議題激盪跨域共學火花。"
-    },
-    {
-      id: "img-7966",
-      src: "images/IMG_7966.jpg",
-      raw: "影音/IMG_7966.jpg",
-      title: "議課圓滿結束：展現南投國中專業社群能量",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "與會全體師長一致肯定本次公開課的研討成果，為新進教師專業成長注入堅實支持。"
-    },
-    {
-      id: "img-7968",
-      src: "images/IMG_7968.jpg",
-      raw: "影音/IMG_7968.jpg",
-      title: "研討記錄與資料彙整封存",
-      category: "meeting",
-      catName: "觀課研討紀錄",
-      desc: "完成完整會議紀錄與心智圖產出，為全校教學觀摩與經驗傳承留下珍貴寶藏。"
-    }
+    { id: "img-7832", src: "images/IMG_7832.jpg", raw: "影音/IMG_7832.jpg", title: "公開課破冰暖身：引起動機與目標說明", category: "intro", catName: "課堂引起動機", desc: "石柏華老師以親切溫和的語調開啟課程，向全班說明今天的主題《情緒防爆指南》與上課小組規則。" },
+    { id: "img-7836", src: "images/IMG_7836.jpg", raw: "影音/IMG_7836.jpg", title: "建立專注默契：師生互動與眼神交流", category: "intro", catName: "課堂引起動機", desc: "透過清晰指令讓學生迅速安定注意力，營造安全且具包容性的學習氛圍。" },
+    { id: "img-7838", src: "images/IMG_7838.jpg", raw: "影音/IMG_7838.jpg", title: "情緒簡報導讀：情緒是什麼？", category: "intro", catName: "課堂引起動機", desc: "引導學生回想上週面對考試或被同學開玩笑時的情緒感受，啟動自我覺察感知。" },
+    { id: "img-7842", src: "images/IMG_7842.jpg", raw: "影音/IMG_7842.jpg", title: "觀課教師團隊專注紀錄現場節奏", category: "meeting", catName: "觀課研討紀錄", desc: "許主任、指導教授與觀課夥伴在教室後方認真記錄教師提問、學生發言與時間節奏配置。" },
+    { id: "img-7844", src: "images/IMG_7844.jpg", raw: "影音/IMG_7844.jpg", title: "課堂口令互動：3-2-1 默契凝聚", category: "interaction", catName: "師生互動加分", desc: "全班以高昂默契回應教師指令，現場學習動能充沛，學生舉手踴躍。" },
+    { id: "img-7859", src: "images/IMG_7859.jpg", raw: "影音/IMG_7859.jpg", title: "教師走入組別進行個別引導", category: "group", catName: "小組討論巡視", desc: "分組活動展開，石柏華老師巡視各組走道，俯身聆聽學生的疑難並及時提供回饋。" },
+    { id: "img-7860", src: "images/IMG_7860.jpg", raw: "影音/IMG_7860.jpg", title: "學生認真辨識情緒警報卡", category: "worksheet", catName: "學習單填寫與深思", desc: "學生翻閱情緒學習單，在「身體警訊」項目中勾選心跳加快、手心冰冷或冒汗等特徵。" },
+    { id: "img-7867", src: "images/IMG_7867.jpg", raw: "影音/IMG_7867.jpg", title: "小組討論：我們怎麼面對生氣的時候？", category: "group", catName: "小組討論巡視", desc: "組員彼此交流在生氣當下會想做的事情，有人分享想打枕頭、有人想聽音樂或去操場跑圈。" },
+    { id: "img-7869", src: "images/IMG_7869.jpg", raw: "影音/IMG_7869.jpg", title: "同儕共學：互相核對情緒強度指數", category: "group", catName: "小組討論巡視", desc: "組內同學互相分享彼此的情緒溫度計數值，發現每個人對壓力的敏感點各有不同。" },
+    { id: "img-7878", src: "images/IMG_7878.jpg", raw: "影音/IMG_7878.jpg", title: "舉手踴躍發言：分享組內研討成果", category: "interaction", catName: "師生互動加分", desc: "前排與側邊組別學生主動舉手爭取發表，課堂參與度極高，展現良好的學習動機。" },
+    { id: "img-7879", src: "images/IMG_7879.jpg", raw: "影音/IMG_7879.jpg", title: "教師正向回饋與課堂加分鼓勵", category: "interaction", catName: "師生互動加分", desc: "石柏華老師肯定學生的具體分享，給予即時正向讚美與小組得分獎勵。" },
+    { id: "img-7882", src: "images/IMG_7882.jpg", raw: "影音/IMG_7882.jpg", title: "大腦杏仁核腦科學概念解說", category: "intro", catName: "課堂引起動機", desc: "老師運用投影片插圖講解大腦杏仁核就像火警警報器，幫助學生以科學態度面對情緒起伏。" },
+    { id: "img-7885", src: "images/IMG_7885.jpg", raw: "影音/IMG_7885.jpg", title: "巡視第二組：協助釐清想法加料與客觀事實", category: "group", catName: "小組討論巡視", desc: "引導學生區分『他看我一眼（事實）』與『他一定在瞧不起我（想法加料）』的關鍵差異。" },
+    { id: "img-7886", src: "images/IMG_7886.jpg", raw: "影音/IMG_7886.jpg", title: "各組專注熱烈討論情境案例", category: "group", catName: "小組討論巡視", desc: "不同組別成員全心投入，紙筆記錄著各自的情境解決策略。" },
+    { id: "img-7887", src: "images/IMG_7887.jpg", raw: "影音/IMG_7887.jpg", title: "學生分享真實校園生活經驗", category: "interaction", catName: "師生互動加分", desc: "學生立足座位面向全班，勇敢分享自己在分組合作時曾產生的委屈與因應轉念。" },
+    { id: "img-7893", src: "images/IMG_7893.jpg", raw: "影音/IMG_7893.jpg", title: "4-7-8 呼吸練習示範與實體帶領", category: "interaction", catName: "師生互動加分", desc: "石柏華老師帶領全班放鬆肩膀，進行吸氣 4 秒、屏氣 7 秒、慢吐 8 秒的身心調息實作。" },
+    { id: "img-7894", src: "images/IMG_7894.jpg", raw: "影音/IMG_7894.jpg", title: "全班閉目調息：感受副交感神經安定", category: "interaction", catName: "師生互動加分", desc: "教室在輕柔的音樂中瞬間沉靜，學生閉上雙眼專注體會氣息出入與肌肉鬆弛。" },
+    { id: "img-7896", src: "images/IMG_7896.jpg", raw: "影音/IMG_7896.jpg", title: "呼吸練習後的感受核對與回饋", category: "worksheet", catName: "學習單填寫與深思", desc: "呼吸練習結束後，引導學生在學習單上寫下『呼吸前與呼吸後身體感覺的差別』。" },
+    { id: "img-7897", src: "images/IMG_7897.jpg", raw: "影音/IMG_7897.jpg", title: "書寫深思：記錄我的情緒煞車錦囊", category: "worksheet", catName: "學習單填寫與深思", desc: "學生在學習單上認真勾勒屬於自己的情緒急救三部曲，筆觸專注認真。" },
+    { id: "img-7899", src: "images/IMG_7899.jpg", raw: "影音/IMG_7899.jpg", title: "組間觀摩與共學討論", category: "group", catName: "小組討論巡視", desc: "學生彼此閱讀同組同學寫下的安全想法，從中獲得不同視角的解決靈感。" },
+    { id: "img-7900", src: "images/IMG_7900.jpg", raw: "影音/IMG_7900.jpg", title: "學習單成果檢視與個別鼓勵", category: "worksheet", catName: "學習單填寫與深思", desc: "老師巡至後排，低聲給予害羞學生肯定，鼓勵其待會小組分享時勇敢唸出自己的答案。" },
+    { id: "img-7912", src: "images/IMG_7912.jpg", raw: "影音/IMG_7912.jpg", title: "全班性提問與想法引導", category: "interaction", catName: "師生互動加分", desc: "石柏華老師以開放式問答『如果這時我們回罵過去，結果會變得如何？』引發全班批判性思維。" },
+    { id: "img-7919", src: "images/IMG_7919.jpg", raw: "影音/IMG_7919.jpg", title: "同儕積極補充：更多元的安全替代做法", category: "interaction", catName: "師生互動加分", desc: "其他同學舉手補充：『可以先喝一口水、或是離開現場去洗手間洗一把臉！』" },
+    { id: "img-7920", src: "images/IMG_7920.jpg", raw: "影音/IMG_7920.jpg", title: "黑板板書與重點歸納統整", category: "worksheet", catName: "學習單填寫與深思", desc: "教師在黑板上逐步條列學生發表的關鍵字，幫助視覺型學習者加深記憶。" },
+    { id: "img-7932", src: "images/IMG_7932.jpg", raw: "影音/IMG_7932.jpg", title: "整節課堂核心回顧：做自己情緒的主人", category: "worksheet", catName: "學習單填寫與深思", desc: "課程進入尾聲，老師邀請各組代表說出今天收穫最多的一個觀念，再次扣回情緒防爆三大金鑰。" },
+    { id: "img-7934", src: "images/IMG_7934.jpg", raw: "影音/IMG_7934.jpg", title: "下課前的小組總結算與感謝致意", category: "worksheet", catName: "學習單填寫與深思", desc: "公布課堂小組積分，全班以熱烈掌聲感謝彼此的投入與觀課師長的陪伴。" },
+    { id: "img-7942", src: "images/IMG_7942.jpg", raw: "影音/IMG_7942.jpg", title: "議課會議開始：許主任主持與致詞", category: "meeting", catName: "觀課研討紀錄", desc: "觀課後立即於專題會議室展開議課，許主任肯定公開課的整體流暢度與進度掌控。" },
+    { id: "img-7945", src: "images/IMG_7945.jpg", raw: "影音/IMG_7945.jpg", title: "指導教授針對教案結構深入回饋", category: "meeting", catName: "觀課研討紀錄", desc: "教授就情緒警報選項光譜、評量欄位細節及提問深探策略給予高階專業建言。" },
+    { id: "img-7947", src: "images/IMG_7947.jpg", raw: "影音/IMG_7947.jpg", title: "李協融老師分享班級經營實戰技巧", category: "meeting", catName: "觀課研討紀錄", desc: "李老師傳授『照相機定格口令』與加分標準透明化的現場實務經驗，助益良多。" },
+    { id: "img-7952", src: "images/IMG_7952.jpg", raw: "影音/IMG_7952.jpg", title: "孫雅惠老師回饋課堂節奏與呼吸練習", category: "meeting", catName: "觀課研討紀錄", desc: "孫老師盛讚石柏華老師的台風與語速，並細膩指出呼吸法節奏與思考留白的優化細節。" },
+    { id: "img-7955", src: "images/IMG_7955.jpg", raw: "影音/IMG_7955.jpg", title: "石柏華老師虛心記錄各方建言與反思", category: "meeting", catName: "觀課研討紀錄", desc: "授課教師逐筆記錄專家前輩的建議，坦誠分享設計初衷與現場感受，氣氛融洽溫馨。" },
+    { id: "img-7960", src: "images/IMG_7960.jpg", raw: "影音/IMG_7960.jpg", title: "議課研討聚焦教案修改與後續行動", category: "meeting", catName: "觀課研討紀錄", desc: "研討確立後續教案精進重點：擴充平靜選項、放大投影片字體、並爭取代課實戰磨練。" },
+    { id: "img-7964", src: "images/IMG_7964.jpg", raw: "影音/IMG_7964.jpg", title: "觀課夥伴熱烈交流與跨科對話", category: "meeting", catName: "觀課研討紀錄", desc: "輔導活動與學科領域教師針對學生身心健康議題激盪跨域共學火花。" },
+    { id: "img-7966", src: "images/IMG_7966.jpg", raw: "影音/IMG_7966.jpg", title: "議課圓滿結束：展現南投國中專業社群能量", category: "meeting", catName: "觀課研討紀錄", desc: "與會全體師長一致肯定本次公開課的研討成果，為新進教師專業成長注入堅實支持。" },
+    { id: "img-7968", src: "images/IMG_7968.jpg", raw: "影音/IMG_7968.jpg", title: "研討記錄與資料彙整封存", category: "meeting", catName: "觀課研討紀錄", desc: "完成完整會議紀錄與心智圖產出，為全校教學觀摩與經驗傳承留下珍貴寶藏。" }
   ],
 
   feedbackMatrix: {
@@ -649,8 +516,30 @@ const siteData = {
 
   documents: [
     {
+      id: "doc-new-1",
+      title: "教學計劃（石伯華教案） - 4堂課完整教案與簡報",
+      filename: "教學計劃（石伯華教案）.pdf",
+      aliasPath: "docs/lesson_plan_bohua_new.pdf",
+      type: "PDF",
+      size: "8.5 MB",
+      badge: "正式新版教案",
+      badgeColor: "bg-rose-600",
+      desc: "包含四堂課完整教案設計理念、素養指標、公開課45分鐘詳細歷程表、15頁PPT縮圖與挑戰賽學習單。"
+    },
+    {
+      id: "doc-new-2",
+      title: "情緒防爆三關挑戰賽 - 課堂學生學習單",
+      filename: "情緒防爆三關挑戰賽 .pdf",
+      aliasPath: "docs/emotion_challenge_worksheet.pdf",
+      type: "PDF",
+      size: "1.3 MB",
+      badge: "挑戰賽學習單",
+      badgeColor: "bg-purple-600",
+      desc: "國中生情緒防爆實作單，含情緒警報溫度計、身體訊號、4-7-8呼吸檢核、想法地雷拆除與行為戰術登出。"
+    },
+    {
       id: "doc-1",
-      title: "1151030 投中專輔柏華教案 - 情緒防爆指南",
+      title: "1151030 投中專輔石柏華教案 - 情緒防爆指南",
       filename: "1151030投中專輔柏華教案-情緒防爆指南.pdf",
       aliasPath: "docs/lesson_plan.pdf",
       type: "PDF",
@@ -668,7 +557,7 @@ const siteData = {
       size: "23.5 MB",
       badge: "演示簡報",
       badgeColor: "bg-amber-500",
-      desc: "公開授課現場使用之 20+ 頁精美動態教學簡報，包含情境漫畫、杏仁核大腦構造圖與情緒溫度計指針動畫。"
+      desc: "公開授課現場使用之 21 頁精美動態教學簡報，包含情境漫畫、杏仁核大腦構造圖與情緒溫度計指針動畫。"
     },
     {
       id: "doc-3",
@@ -783,7 +672,6 @@ const siteData = {
   ]
 };
 
-// 支援瀏覽器與 Node.js 雙環境
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = siteData;
 }

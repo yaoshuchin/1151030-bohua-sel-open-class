@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>石柏華公開觀議課 ｜ 南投國中 115學年度 SEL社會情緒學習公開授課與議課研討成果旗艦網</title>
-  <meta name="description" content="南投縣立南投國中 115學年度 專任輔導教師石柏華 · SEL社會情緒學習《情緒防爆指南》公開授課演示與觀課議課研討成果旗艦網。整合45分鐘教學歷程、35張現場實況圖輯、4.3萬字議課全紀錄與新手教師教學優化大補帖。" />
-  <meta name="keywords" content="石柏華公開觀議課, 石柏華, 南投國中, SEL, 社會情緒學習, 情緒防爆指南, 公開授課, 觀議課, 4-7-8呼吸法, 杏仁核, 新手教師大補帖" />
+  <meta name="description" content="南投縣立南投國中 115學年度 專任輔導教師石柏華 · SEL社會情緒學習《情緒調節－不爆彈計畫（氣球）》公開授課演示與觀課議課研討成果旗艦網。整合4堂課完整教案、21頁線上簡報播放器、情緒防爆三關互動學習單、35張現場實況圖輯、4.3萬字議課全紀錄與新手教師大補帖。" />
+  <meta name="keywords" content="石柏華公開觀議課, 石柏華, 石伯華, 南投國中, SEL, 社會情緒學習, 情緒防爆指南, 不爆彈計畫, 4-7-8呼吸法, 地雷拆除, 戰術登出, 公開授課, 觀議課" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/IMG_7832.jpg" type="image/jpeg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
@@ -38,16 +38,6 @@
               800: '#5b21b6',
               900: '#4c1d95',
               950: '#2e1065',
-            },
-            heart: {
-              DEFAULT: '#f43f5e',
-              light: '#ffe4e6',
-              dark: '#9f1239'
-            },
-            calm: {
-              DEFAULT: '#0d9488',
-              light: '#ccfbf1',
-              dark: '#115e59'
             }
           }
         }
@@ -67,7 +57,7 @@
     .dark ::-webkit-scrollbar-thumb { background: #334155; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-    /* Transitions & Badges */
+    /* Transitions & Hover */
     .card-hover {
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -76,11 +66,25 @@
       box-shadow: 0 16px 32px -8px rgba(99, 102, 241, 0.15);
     }
 
+    /* Breathing Circle Animation */
+    @keyframes breatheExpand {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.6); opacity: 1; }
+    }
+    @keyframes breatheHold {
+      0% { transform: scale(1.6); }
+      100% { transform: scale(1.6); }
+    }
+    @keyframes breatheContract {
+      0% { transform: scale(1.6); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
     /* Print Styles */
     @media print {
       nav, footer, .no-print, button { display: none !important; }
       body { background: white !important; color: black !important; }
-      .print-break { page-break-before: always; }
+      .print-area { display: block !important; }
     }
   </style>
 </head>
@@ -89,7 +93,7 @@
   <!-- ========================================================
        TOP NAVBAR
        ======================================================== -->
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         <!-- Brand / Title -->
@@ -102,20 +106,28 @@
               <span class="text-lg sm:text-xl font-black tracking-tight text-slate-900 dark:text-white group-hover:text-purple-600 transition-colors">石柏華公開觀議課</span>
               <span class="hidden sm:inline-flex px-2 py-0.5 text-xs font-semibold rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">南投國中SEL</span>
             </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">石柏華專輔教師 · 情緒防爆指南</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">石柏華專輔教師 · 不爆彈計畫</p>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <div class="hidden lg:flex items-center gap-1 xl:gap-2">
-          <a href="#curriculum" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">課程核心</a>
-          <a href="#videos" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">演示影音</a>
-          <a href="#gallery" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">現場圖輯 (35)</a>
-          <a href="#feedback" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">議課全景矩陣</a>
-          <a href="#playbook" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">新手大補帖</a>
-          <a href="#mindmap" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">全景心智圖</a>
-          <a href="#downloads" class="px-3 py-2 text-sm font-semibold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/60 rounded-lg transition-all flex items-center gap-1.5">
-            <i data-lucide="download" class="w-4 h-4"></i>資源下載
+        <div class="hidden xl:flex items-center gap-1">
+          <a href="#lesson-plan" class="px-3 py-2 text-sm font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all flex items-center gap-1">
+            <i data-lucide="file-text" class="w-4 h-4"></i>教案說明
+          </a>
+          <a href="#slides-viewer" class="px-3 py-2 text-sm font-bold text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all flex items-center gap-1">
+            <i data-lucide="presentation" class="w-4 h-4"></i>上課簡報
+          </a>
+          <a href="#interactive-challenge" class="px-3 py-2 text-sm font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/60 rounded-lg transition-all flex items-center gap-1">
+            <i data-lucide="gamepad-2" class="w-4 h-4"></i>情緒防爆三關
+          </a>
+          <a href="#videos" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">演示影音</a>
+          <a href="#gallery" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">現場圖輯 (35)</a>
+          <a href="#feedback" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">議課回饋矩陣</a>
+          <a href="#playbook" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">新手大補帖</a>
+          <a href="#mindmap" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">心智圖</a>
+          <a href="#downloads" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-purple-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-1">
+            <i data-lucide="download" class="w-4 h-4"></i>下載中心
           </a>
         </div>
 
@@ -125,21 +137,23 @@
             <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
             <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
           </button>
-          <button id="mobileMenuBtn" aria-label="開啟選單" class="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <button id="mobileMenuBtn" aria-label="開啟選單" class="xl:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
             <i data-lucide="menu" class="w-5 h-5"></i>
           </button>
         </div>
       </div>
 
       <!-- Mobile Dropdown Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden py-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
-        <a href="#curriculum" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">課程核心理念</a>
-        <a href="#videos" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">課堂演示影音</a>
-        <a href="#gallery" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">現場實況圖輯 (35張)</a>
-        <a href="#feedback" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">議課回饋全景矩陣</a>
-        <a href="#playbook" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">新手教師議課大補帖</a>
-        <a href="#mindmap" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">全景心智圖</a>
-        <a href="#downloads" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">教材與文檔下載中心</a>
+      <div id="mobileMenu" class="hidden xl:hidden py-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
+        <a href="#lesson-plan" class="mobile-nav-link block px-4 py-2.5 text-base font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg">教案詳細說明</a>
+        <a href="#slides-viewer" class="mobile-nav-link block px-4 py-2.5 text-base font-bold text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg">上課簡報播放器 (21頁)</a>
+        <a href="#interactive-challenge" class="mobile-nav-link block px-4 py-2.5 text-base font-bold text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg">情緒防爆三關 (互動學習單)</a>
+        <a href="#videos" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">課堂演示影音</a>
+        <a href="#gallery" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">現場實況圖輯 (35張)</a>
+        <a href="#feedback" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">議課回饋全景矩陣</a>
+        <a href="#playbook" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">新手教師議課大補帖</a>
+        <a href="#mindmap" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">全景心智圖</a>
+        <a href="#downloads" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">教材與文檔下載中心</a>
       </div>
     </div>
   </nav>
@@ -148,7 +162,6 @@
        HERO SECTION
        ======================================================== -->
   <header class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-slate-200/60 dark:border-slate-800">
-    <!-- Gradient Background Glow -->
     <div class="absolute inset-0 bg-gradient-to-br from-purple-100/60 via-indigo-50/40 to-rose-50/40 dark:from-purple-950/20 dark:via-slate-900/40 dark:to-slate-950 pointer-events-none"></div>
     <div class="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/10 dark:bg-rose-500/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -167,28 +180,32 @@
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight sm:leading-none mb-6">
           <span class="block text-slate-900 dark:text-white">石柏華公開觀議課</span>
           <span class="block mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-purple-600 via-indigo-600 to-rose-500 bg-clip-text text-transparent">
-            《情緒防爆指南》做情緒的主人 · SEL成果旗艦網
+            《情緒調節－不爆彈計畫》防爆三關 · SEL成果旗艦網
           </span>
         </h1>
 
         <!-- Subtitle -->
         <p class="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto mb-10">
-          整合社會情緒學習（SEL）五大核心能力、45分鐘公開課現場教學演示、35張現場高畫質實況圖輯、4.3萬字議課逐字深思與專家回饋矩陣，提供新進教師最接地氣的教學優化寶典。
+          整合 4 堂課完整教案說明、21 頁線上簡報播放器、情緒防爆三關互動學習單、45 分鐘演示實況、35 張高畫質照片與 4.3 萬字議課全紀錄。
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="#curriculum" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-purple-500/25 active:scale-95 transition-all">
-            <i data-lucide="compass" class="w-5 h-5"></i>
-            探索課程架構
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <a href="#interactive-challenge" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-purple-500/25 active:scale-95 transition-all">
+            <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+            挑戰情緒防爆三關
           </a>
-          <a href="#videos" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 font-bold text-sm sm:text-base shadow-sm active:scale-95 transition-all">
-            <i data-lucide="play-circle" class="w-5 h-5 text-purple-600 dark:text-purple-400"></i>
-            觀看演示影音
+          <a href="#slides-viewer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-white font-bold text-sm sm:text-base shadow-md active:scale-95 transition-all">
+            <i data-lucide="presentation" class="w-5 h-5"></i>
+            播放上課簡報
           </a>
-          <a href="#feedback" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 border border-purple-200/60 dark:border-purple-800 text-purple-700 dark:text-purple-300 font-bold text-sm sm:text-base active:scale-95 transition-all">
-            <i data-lucide="message-square" class="w-5 h-5"></i>
-            議課專家回饋
+          <a href="#lesson-plan" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 font-bold text-sm sm:text-base shadow-sm active:scale-95 transition-all">
+            <i data-lucide="file-text" class="w-5 h-5 text-rose-500"></i>
+            瀏覽詳細教案
+          </a>
+          <a href="#feedback" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm sm:text-base active:scale-95 transition-all">
+            <i data-lucide="message-square" class="w-5 h-5 text-indigo-500"></i>
+            專家議課回饋
           </a>
         </div>
       </div>
@@ -196,125 +213,132 @@
       <!-- Key Metrics Row -->
       <div class="mt-14 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 text-center card-hover">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3">
-            <i data-lucide="clock" class="w-6 h-6"></i>
-          </div>
-          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">45<span class="text-base font-semibold text-slate-500 ml-1">分鐘</span></div>
-          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">公開教學演示實況</div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">涵蓋覺察、呼吸放鬆與情境演練</p>
-        </div>
-
-        <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 text-center card-hover">
           <div class="w-12 h-12 mx-auto rounded-2xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-3">
-            <i data-lucide="image" class="w-6 h-6"></i>
+            <i data-lucide="file-check-2" class="w-6 h-6"></i>
           </div>
-          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">35<span class="text-base font-semibold text-slate-500 ml-1">張</span></div>
-          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">現場實況高畫質圖輯</div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">長800寬600以下、480優化快載</p>
+          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">4<span class="text-base font-semibold text-slate-500 ml-1">節課</span></div>
+          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">完整教學計劃教案</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">覺察、強度、理解、調節不爆彈</p>
         </div>
 
         <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 text-center card-hover">
           <div class="w-12 h-12 mx-auto rounded-2xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3">
-            <i data-lucide="file-text" class="w-6 h-6"></i>
+            <i data-lucide="presentation" class="w-6 h-6"></i>
           </div>
-          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">4.3<span class="text-base font-semibold text-slate-500 ml-1">萬字</span></div>
-          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">議課研討逐字沉澱</div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">主任、教授與觀課夥伴傾囊相授</p>
+          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">21<span class="text-base font-semibold text-slate-500 ml-1">頁</span></div>
+          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">上課簡報線上播放</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">全螢幕導覽、縮圖預覽與教學備忘</p>
+        </div>
+
+        <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 text-center card-hover">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3">
+            <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+          </div>
+          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">3<span class="text-base font-semibold text-slate-500 ml-1">大關卡</span></div>
+          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">防爆挑戰互動學習單</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">動態倒數呼吸球、情境拆彈、證書</p>
         </div>
 
         <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 text-center card-hover">
           <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3">
-            <i data-lucide="check-circle" class="w-6 h-6"></i>
+            <i data-lucide="message-square" class="w-6 h-6"></i>
           </div>
-          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">4<span class="text-base font-semibold text-slate-500 ml-1">大維度</span></div>
-          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">教學優化精進策略</div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">台風、秩序、引導、教材全向提升</p>
+          <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">4.3<span class="text-base font-semibold text-slate-500 ml-1">萬字</span></div>
+          <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">議課研討專家矩陣</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">主任、教授、公民與資深教師回饋</p>
         </div>
       </div>
     </div>
   </header>
 
   <!-- ========================================================
-       MODULE 1: 課程核心與教案導航 (CURRICULUM)
+       #1 NEW MODULE: 教案詳細說明 (LESSON PLAN)
        ======================================================== -->
-  <section id="curriculum" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800">
+  <section id="lesson-plan" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">
-          <i data-lucide="book-open" class="w-3.5 h-3.5"></i> 核心素養導航
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i> 核心教學計劃
         </span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-          SEL 社會情緒學習三部曲
+          《情緒調節－不爆彈計畫》完整教案
         </h2>
         <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-          針對青少年日常生活中的「焦慮、同儕衝突、衝動斷線」痛點，以腦科學為基底，循序漸進鍛鍊自我覺察、煞車調節與正向轉念。
+          參考《教學計劃（石伯華教案）.pdf》，專注國中青少年真實人際與數位社群壓力，系統化架構四堂課教學目標與公開課 45 分鐘實施歷程。
         </p>
       </div>
 
-      <!-- SEL 5 Pillars -->
+      <!-- Plan Metadata Card -->
+      <div class="bg-gradient-to-br from-slate-50 to-purple-50/30 dark:from-slate-800/60 dark:to-purple-950/20 border border-slate-200 dark:border-slate-700/80 rounded-3xl p-6 sm:p-8 mb-12 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div>
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">單元名稱</div>
+            <div class="text-lg font-black text-slate-900 dark:text-white mt-1">情緒調節－不爆彈計畫（氣球）</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">綜合活動領域 · 輔導科</p>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">教學者與對象</div>
+            <div class="text-lg font-black text-slate-900 dark:text-white mt-1">石柏華 老師</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">國中八年級（國二）· 專任輔導</p>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">總教學時間</div>
+            <div class="text-lg font-black text-slate-900 dark:text-white mt-1">4 節課 ｜ 180 分鐘</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">公開演示課為第4節（45分鐘）</p>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">核心素養對應</div>
+            <div class="text-lg font-black text-slate-900 dark:text-white mt-1">1d-IV-1 ｜ A1 身心素質</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">輔Da-IV-1, Da-IV-2, Db-IV-2</p>
+          </div>
+        </div>
+
+        <!-- Concept Quote -->
+        <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <i data-lucide="quote" class="w-3.5 h-3.5 text-purple-600"></i>
+            教案核心理念 (Design Concept)
+          </div>
+          <blockquote class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic bg-white/70 dark:bg-slate-900/60 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-700/60">
+            「在數位社群普及、同儕互動頻繁的現代生活中，學生常因訊息已讀不回、社群比較、網路嘲諷或同儕排擠而產生情緒起伏。本課程融入生活情境，讓學生理解：<strong class="text-purple-600 dark:text-purple-400 not-italic">情緒不是需要被壓抑的問題，而是值得被理解的訊號</strong>；重要的不只是感受到什麼，更是如何理解情緒，並選擇適當的回應方式。」
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- 4 Lessons Curriculum Map -->
       <div class="mb-14">
         <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-          <i data-lucide="award" class="w-5 h-5 text-purple-600"></i>
-          SEL 五大核心能力貫穿指標
+          <i data-lucide="layers" class="w-5 h-5 text-rose-500"></i>
+          四堂課循序漸進架構地圖
         </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" id="selPillarsContainer">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="fourLessonsContainer">
           <!-- Populated by JS -->
         </div>
       </div>
 
-      <!-- 3 Stages Timeline -->
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm mb-14">
-        <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+      <!-- 45-Minute Classroom Demonstration Timetable -->
+      <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 mb-12">
+        <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">Class Progression</span>
-            <h3 class="text-2xl font-black text-slate-900 dark:text-white">公開課 45 分鐘教學歷程設計</h3>
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Classroom Timeline</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">公開課（第四節 45 分鐘）詳細教學活動流程</h3>
           </div>
-          <span class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
-            演示授課：石柏華老師
+          <span class="px-3 py-1 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 text-xs font-bold">
+            教案實作驗證
           </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="stagesContainer">
+        <div class="space-y-4" id="demoProcedureContainer">
           <!-- Populated by JS -->
         </div>
-      </div>
 
-      <!-- Poster Highlights -->
-      <div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-          <i data-lucide="layout" class="w-5 h-5 text-purple-600"></i>
-          公開課核心視覺海報
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm card-hover group">
-            <div class="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
-              <img src="images/1151030-15-08柏華SEL公開課1.jpg" alt="柏華SEL公開課核心概念海報1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-              <div class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">
-                情緒防爆指南 · 視覺總覽 (1)
-              </div>
-            </div>
-            <div class="p-6">
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white">大腦警報與情緒溫度計</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                以視覺化方式呈現情緒由平靜到爆發的刻度光譜，引導學生辨識手心冒汗、呼吸加速等生理訊號。
-              </p>
-            </div>
-          </div>
-
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm card-hover group">
-            <div class="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
-              <img src="images/1151030-15-08柏華SEL公開課2.jpg" alt="柏華SEL公開課核心概念海報2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-              <div class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">
-                做情緒的主人 · 策略導航 (2)
-              </div>
-            </div>
-            <div class="p-6">
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white">三步煞車法與轉念替代行動</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                詳列「停止想法加料」、「4-7-8呼吸放鬆」與「換位安全表達」，協助青少年於人際衝突瞬間迅速踩住煞車。
-              </p>
-            </div>
+        <!-- Clinical Evidence Box -->
+        <div class="mt-6 p-4 rounded-2xl bg-indigo-50/70 dark:bg-indigo-950/30 border border-indigo-200/60 dark:border-indigo-900/40 text-xs text-indigo-900 dark:text-indigo-200 flex items-start gap-3">
+          <i data-lucide="bookmark" class="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5"></i>
+          <div>
+            <span class="font-bold">臨床文獻實證支持：</span>
+            <span>臨床實驗顯示，規律練習 4-7-8 呼吸法能顯著激活人體副交感神經、顯著提升心率變異度（HRV），並有效降低皮質醇（壓力荷爾蒙）水準（Geethanjali et al., 2022; Kahraman & Ozdemir, 2023）。</span>
           </div>
         </div>
       </div>
@@ -322,11 +346,308 @@
   </section>
 
   <!-- ========================================================
-       MODULE 2: 演示影音專區 (VIDEOS)
+       #2 NEW MODULE: 上課簡報播放器 (SLIDES VIEWER)
        ======================================================== -->
-  <section id="videos" class="py-16 sm:py-24 bg-slate-100/60 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="slides-viewer" class="py-16 sm:py-24 bg-slate-900 text-white border-b border-slate-800 relative overflow-hidden">
+    <!-- Glow -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="presentation" class="w-3.5 h-3.5"></i> 現場教學投影片
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          上課簡報線上播放器（21 頁全彩投影片）
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
+          參考《教學計劃（石伯華教案）.pdf》後方之教學 PPT，以微調高畫質呈現，支援全螢幕、鍵盤切換與教學備忘錄。
+        </p>
+      </div>
+
+      <!-- Slide Player Container -->
+      <div class="bg-slate-950/90 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl max-w-5xl mx-auto">
+        <!-- Main Slide Viewport -->
+        <div id="slideViewport" class="relative overflow-hidden aspect-video bg-black rounded-2xl flex items-center justify-center border border-slate-800 group">
+          <img id="currentSlideImg" src="images/slides/slide_01.jpg" alt="簡報第 1 頁" class="w-full h-full object-contain transition-opacity duration-200" />
+
+          <!-- Floating Prev/Next Buttons -->
+          <button onclick="prevSlide()" aria-label="上一頁" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur transition-all active:scale-95 opacity-80 group-hover:opacity-100">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          </button>
+          <button onclick="nextSlide()" aria-label="下一頁" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur transition-all active:scale-95 opacity-80 group-hover:opacity-100">
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </button>
+
+          <!-- Top Badge -->
+          <div class="absolute top-4 left-4 bg-black/75 backdrop-blur px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2 border border-slate-700/60">
+            <span id="slideCategoryBadge" class="text-amber-400">單元首頁</span>
+            <span class="w-1 h-1 rounded-full bg-slate-500"></span>
+            <span id="slideCounterText" class="text-white">Page 01 / 21</span>
+          </div>
+
+          <!-- Fullscreen Button -->
+          <button onclick="toggleSlideFullscreen()" aria-label="全螢幕" class="absolute top-4 right-4 p-2 rounded-xl bg-black/75 hover:bg-black text-white backdrop-blur border border-slate-700/60 transition-colors">
+            <i data-lucide="maximize" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Controls Toolbar -->
+        <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+          <div class="flex items-center gap-3">
+            <button onclick="prevSlide()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold transition-all flex items-center gap-1">
+              <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> 上一頁
+            </button>
+            <button onclick="nextSlide()" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition-all flex items-center gap-1 shadow-md">
+              下一頁 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button id="autoPlayBtn" onclick="toggleAutoPlay()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 transition-colors flex items-center gap-1.5">
+              <i data-lucide="play" class="w-3.5 h-3.5"></i>
+              <span id="autoPlayText">自動播放</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-3 text-xs text-slate-400">
+            <span class="hidden sm:inline">提示：亦可使用鍵盤 ← → 鍵切換</span>
+            <a href="docs/emotion_navigation_guide.pptx" download class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 transition-colors">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> 下載 PPTX
+            </a>
+          </div>
+        </div>
+
+        <!-- Teacher's Notes Card for Current Slide -->
+        <div class="mt-4 p-4 rounded-2xl bg-slate-900/50 border border-slate-800/80">
+          <div class="flex items-center justify-between mb-1">
+            <h4 id="slideTitle" class="text-sm font-bold text-white flex items-center gap-2">
+              <i data-lucide="sparkle" class="w-4 h-4 text-amber-400"></i>
+              情緒調節－不爆彈計畫
+            </h4>
+            <span class="text-[11px] text-slate-400">教學備忘筆記</span>
+          </div>
+          <p id="slideNotes" class="text-xs text-slate-300 leading-relaxed mt-1">
+            本單元《情緒調節－不爆彈計畫》封面，確立做情緒主人的核心理念。
+          </p>
+        </div>
+
+        <!-- Thumbnails Strip -->
+        <div class="mt-4 overflow-x-auto pb-2 flex gap-2" id="slidesThumbnailsContainer">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       #3 NEW MODULE: 情緒防爆三關 互動學習單 (INTERACTIVE CHALLENGE)
+       ======================================================== -->
+  <section id="interactive-challenge" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i> 線上實作學習單
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+          情緒防爆三關挑戰賽（互動學習單）
+        </h2>
+        <div class="inline-block mt-3 px-4 py-1.5 rounded-full bg-purple-600 text-white text-xs sm:text-sm font-bold shadow-md">
+          「情緒調節不是忍耐，是把控制權拿回來」
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-3">
+          參考《情緒防爆三關挑戰賽 .pdf》製作。在線上完成三關任務，體驗 4-7-8 呼吸動畫、地雷拆除與戰術登出，即可生成專屬任務證明卡！
+        </p>
+      </div>
+
+      <!-- Main Worksheet Interactive Form -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-lg space-y-10">
+
+        <!-- Student Basic Info -->
+        <div class="bg-slate-50 dark:bg-slate-800/50 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700">
+          <div class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-3 flex items-center gap-1.5">
+            <i data-lucide="user" class="w-4 h-4"></i> 挑戰者基本資料
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">姓名</label>
+              <input type="text" id="studentName" placeholder="例如：王小明" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">班級</label>
+              <input type="text" id="studentClass" placeholder="例如：8年3班" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">座號</label>
+              <input type="number" id="studentNo" placeholder="例如：12" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 1: 我的情緒警報 -->
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-8">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-7 h-7 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-bold">一</span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">我的情緒警報</h3>
+          </div>
+
+          <!-- Emotion Tags Selection -->
+          <div class="mb-6">
+            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-2">我現在的情緒：（點擊選擇或自訂）</label>
+            <div class="flex flex-wrap gap-2" id="emotionTagsContainer">
+              <!-- Populated by JS -->
+            </div>
+            <input type="text" id="customEmotionInput" placeholder="或自行輸入當前情緒詞彙..." class="mt-3 w-full sm:w-80 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs focus:ring-2 focus:ring-purple-500 outline-none" />
+          </div>
+
+          <!-- Emotion Thermometer Slider -->
+          <div class="mb-6 bg-slate-50 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-200">情緒強度（0 = 很平靜，10 = 快爆炸）</label>
+              <span id="intensityBadge" class="px-3 py-1 rounded-full text-xs font-black bg-emerald-500 text-white shadow-sm">
+                強度：0 分（平靜安全）
+              </span>
+            </div>
+            <input type="range" id="intensitySlider" min="0" max="10" value="0" class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-purple-600" />
+            <div class="flex justify-between text-[11px] text-slate-400 mt-2">
+              <span>0 (很平靜)</span>
+              <span>3 (開始有感)</span>
+              <span>5 (心跳加速)</span>
+              <span>8 (理智邊緣)</span>
+              <span>10 (快要爆炸)</span>
+            </div>
+          </div>
+
+          <!-- Body Alarms Checkboxes -->
+          <div>
+            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-2">身體警報（可複選）：</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="bodyAlarmsContainer">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 2: 防爆三關挑戰任務 -->
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-8 space-y-8">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-7 h-7 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-bold">二</span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">防爆三關挑戰任務</h3>
+          </div>
+
+          <!-- Quest 1: 身體的路 -->
+          <div class="border border-purple-200 dark:border-purple-900/60 bg-purple-50/40 dark:bg-purple-950/20 rounded-3xl p-6">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-purple-600 text-white text-xs font-bold">關卡 1</span>
+                <h4 class="font-bold text-base text-slate-900 dark:text-white">身體的路 ｜ 慢速放氣（4-7-8 呼吸法 × 3次）</h4>
+              </div>
+              <span id="breathingProgressBadge" class="text-xs font-bold text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-900/60 px-3 py-1 rounded-full">
+                完成進度：0 / 3 次
+              </span>
+            </div>
+
+            <!-- Dynamic Breathing Circle Box -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-purple-100 dark:border-purple-900/40 flex flex-col items-center justify-center text-center my-4">
+              <div class="relative w-40 h-40 flex items-center justify-center my-4">
+                <div id="breatheCircle" class="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 text-white flex items-center justify-center font-bold text-xs shadow-xl transition-all duration-1000">
+                  <span id="breatheActionText">準備</span>
+                </div>
+              </div>
+              <div id="breatheTimerText" class="text-2xl font-black text-purple-600 dark:text-purple-400 mt-2">點擊開始</div>
+              <p id="breatheInstruction" class="text-xs text-slate-500 dark:text-slate-400 mt-1">4秒鼻子吸氣 ➔ 7秒屏息懸氣 ➔ 8秒嘴巴慢吐氣</p>
+
+              <button id="startBreatheBtn" onclick="startBreathingExercise()" class="mt-4 px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all shadow-md active:scale-95 flex items-center gap-2">
+                <i data-lucide="play" class="w-4 h-4"></i> 開始 4-7-8 呼吸練習
+              </button>
+            </div>
+
+            <div class="mt-4">
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">做完後，我的身體感覺：</label>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <button type="button" onclick="setBodyFeel('胸口沒那麼悶了，呼吸變順暢')" class="text-[11px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-purple-50 text-slate-700 dark:text-slate-300">胸口沒那麼悶了</button>
+                <button type="button" onclick="setBodyFeel('肩膀自然放鬆下來，不再緊繃')" class="text-[11px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-purple-50 text-slate-700 dark:text-slate-300">肩膀放鬆了</button>
+                <button type="button" onclick="setBodyFeel('心跳變慢，大腦感覺比較平靜')" class="text-[11px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-purple-50 text-slate-700 dark:text-slate-300">心跳平緩平靜</button>
+              </div>
+              <input type="text" id="bodyFeelInput" placeholder="寫下呼吸練習後身體的具體改變..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
+            </div>
+          </div>
+
+          <!-- Quest 2: 想法的路 -->
+          <div class="border border-amber-200 dark:border-amber-900/60 bg-amber-50/40 dark:bg-amber-950/20 rounded-3xl p-6">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-xs font-bold">關卡 2</span>
+                <h4 class="font-bold text-base text-slate-900 dark:text-white">想法的路 ｜ 地雷拆除大師</h4>
+              </div>
+              <span class="text-xs font-semibold text-amber-700 dark:text-amber-400">
+                撕掉大腦裡自己加的料！
+              </span>
+            </div>
+
+            <!-- Preset Scenarios Dropdown / Quick Buttons -->
+            <div class="mb-4 bg-white dark:bg-slate-900 p-4 rounded-2xl border border-amber-100 dark:border-amber-900/40">
+              <label class="block text-xs font-bold text-amber-800 dark:text-amber-300 mb-2">快速套用生活實戰情境範本：（或自行填寫下列表格）</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2" id="scenariosPresetContainer">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">① 發生了什麼事？（客觀事實）</label>
+                <input type="text" id="eventFactInput" placeholder="例如：傳訊息給朋友，對方已讀不回..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-amber-500 outline-none" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-rose-600 dark:text-rose-400 mb-1">② 我腦中加了什麼料？（原本會讓人爆炸的加料想法）</label>
+                <input type="text" id="toxicThoughtInput" placeholder="例如：他一定是看不起我、故意排擠我！" class="w-full px-3.5 py-2.5 rounded-xl border border-rose-200 dark:border-rose-900 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-rose-500 outline-none" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">③ 換成安全想法（拆彈後的轉念）：</label>
+                <input type="text" id="safeThoughtInput" placeholder="例如：他可能剛好在上課或吃飯，等有空自然會回覆我..." class="w-full px-3.5 py-2.5 rounded-xl border border-emerald-200 dark:border-emerald-900 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 outline-none" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Quest 3: 行為的路 -->
+          <div class="border border-sky-200 dark:border-sky-900/60 bg-sky-50/40 dark:bg-sky-950/20 rounded-3xl p-6">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-sky-600 text-white text-xs font-bold">關卡 3</span>
+                <h4 class="font-bold text-base text-slate-900 dark:text-white">行為的路 ｜ 戰術登出</h4>
+              </div>
+              <span class="text-xs font-semibold text-sky-700 dark:text-sky-300">
+                暫時放下快爆的氣球，物理隔離 10 秒鐘！
+              </span>
+            </div>
+
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-3">我選擇的戰術登出方式是：（可多選）</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="logoutChoicesContainer">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="mt-4">
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">其他自選登出方式：</label>
+              <input type="text" id="customLogoutInput" placeholder="例如：去洗手間用冷水洗把臉、深呼吸喝一口溫水..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-sky-500 outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit & Generate Certificate Button -->
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-8 text-center">
+          <button type="button" onclick="submitChallengeCard()" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-rose-500 hover:from-purple-500 hover:to-rose-400 text-white font-extrabold text-base shadow-xl shadow-purple-500/25 active:scale-95 transition-all inline-flex items-center gap-2">
+            <i data-lucide="award" class="w-5 h-5"></i>
+            完成挑戰 ➔ 生成「情緒防爆通關任務卡」
+          </button>
+          <p class="text-xs text-slate-400 mt-2">完成後可將成果任務卡列印存檔或截圖分享</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MODULE: 演示影音專區 (VIDEOS)
+       ======================================================== -->
+  <section id="videos" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 text-xs font-bold uppercase tracking-wider mb-3">
           <i data-lucide="video" class="w-3.5 h-3.5"></i> 現場精華影音
@@ -339,56 +660,35 @@
         </p>
       </div>
 
-      <!-- Videos Tabs -->
-      <div class="flex items-center justify-center gap-2 sm:gap-4 mb-8 flex-wrap" id="videoTabsContainer">
-        <!-- Populated by JS -->
-      </div>
+      <div class="flex items-center justify-center gap-2 sm:gap-4 mb-8 flex-wrap" id="videoTabsContainer"></div>
 
-      <!-- Active Video Player Card -->
       <div id="activeVideoCard" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-lg transition-all">
         <div class="grid grid-cols-1 lg:grid-cols-12">
-          <!-- Video Screen -->
           <div class="lg:col-span-8 bg-black flex items-center justify-center aspect-video relative">
             <video id="mainVideoPlayer" controls playsinline class="w-full h-full object-contain">
               <source id="videoSource" src="videos/why_brain_freeze.mp4" type="video/mp4" />
               您的瀏覽器不支援 HTML5 影片播放。
             </video>
           </div>
-
-          <!-- Video Notes / Description -->
           <div class="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span id="videoTag" class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">
-                  公開課核心媒材
-                </span>
-                <span id="videoDuration" class="text-xs font-semibold text-slate-500 flex items-center gap-1">
-                  <i data-lucide="clock" class="w-3.5 h-3.5"></i> 02:18
-                </span>
+                <span id="videoTag" class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">公開課核心媒材</span>
+                <span id="videoDuration" class="text-xs font-semibold text-slate-500 flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 02:18</span>
               </div>
-              <h3 id="videoTitle" class="text-xl font-bold text-slate-900 dark:text-white leading-snug">
-                為什麼我們常常理智斷線？
-              </h3>
-              <p id="videoDesc" class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
-                利用生動動畫解析大腦杏仁核如何在威脅下搶奪主導權，讓前額葉瞬間離線。
-              </p>
+              <h3 id="videoTitle" class="text-xl font-bold text-slate-900 dark:text-white leading-snug">為什麼我們常常理智斷線？</h3>
+              <p id="videoDesc" class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">利用生動動畫解析大腦杏仁核如何在威脅下搶奪主導權，讓前額葉瞬間離線。</p>
 
               <div class="mt-6 border-t border-slate-100 dark:border-slate-800 pt-5">
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-1.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
-                  教學指引與重點筆記
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> 教學指引與重點筆記
                 </h4>
-                <ul id="videoTakeaways" class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                  <!-- Populated by JS -->
-                </ul>
+                <ul id="videoTakeaways" class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300"></ul>
               </div>
             </div>
-
-            <!-- Download button -->
             <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
               <a id="videoDownloadBtn" href="videos/why_brain_freeze.mp4" download class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold transition-colors">
-                <i data-lucide="download" class="w-4 h-4"></i>
-                下載原始影片檔
+                <i data-lucide="download" class="w-4 h-4"></i> 下載原始影片檔
               </a>
             </div>
           </div>
@@ -398,11 +698,10 @@
   </section>
 
   <!-- ========================================================
-       MODULE 3: 現場實況圖輯 (GALLERY)
+       MODULE: 現場實況圖輯 (GALLERY)
        ======================================================== -->
-  <section id="gallery" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800">
+  <section id="gallery" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
           <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
@@ -412,46 +711,29 @@
             課堂演示與觀議課 35 幕精彩縮影
           </h2>
           <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2">
-            所有照片皆已針對網頁進行微調（畫素長800以下寬600以下、480品質快速加載），點擊可開啟燈箱全螢幕瀏覽。
+            畫素長800以下寬600以下、480品質快速載入，點擊可開啟燈箱全螢幕瀏覽。
           </p>
         </div>
 
-        <!-- Gallery Filters -->
         <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0" id="galleryFilters">
-          <button data-cat="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-purple-600 text-white shadow-sm transition-all whitespace-nowrap">
-            全部 (35)
-          </button>
-          <button data-cat="intro" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
-            課堂動機
-          </button>
-          <button data-cat="interaction" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
-            師生互動
-          </button>
-          <button data-cat="group" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
-            小組討論
-          </button>
-          <button data-cat="worksheet" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
-            學習單深思
-          </button>
-          <button data-cat="meeting" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
-            觀議課研討
-          </button>
+          <button data-cat="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-purple-600 text-white shadow-sm transition-all whitespace-nowrap">全部 (35)</button>
+          <button data-cat="intro" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">課堂動機</button>
+          <button data-cat="interaction" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">師生互動</button>
+          <button data-cat="group" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">小組討論</button>
+          <button data-cat="worksheet" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">學習單深思</button>
+          <button data-cat="meeting" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all whitespace-nowrap">觀議課研討</button>
         </div>
       </div>
 
-      <!-- Photo Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="photoGrid">
-        <!-- Populated by JS -->
-      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="photoGrid"></div>
     </div>
   </section>
 
   <!-- ========================================================
-       MODULE 4: 議課全景矩陣 (FEEDBACK MATRIX)
+       MODULE: 議課全景矩陣 (FEEDBACK MATRIX)
        ======================================================== -->
-  <section id="feedback" class="py-16 sm:py-24 bg-slate-100/60 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
+  <section id="feedback" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-3">
           <i data-lucide="message-square" class="w-3.5 h-3.5"></i> 議課深思矩陣
@@ -464,24 +746,16 @@
         </p>
       </div>
 
-      <!-- Participants Cards -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-14" id="participantsContainer">
-        <!-- Populated by JS -->
-      </div>
-
-      <!-- 4 Dimensions Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="dimensionsContainer">
-        <!-- Populated by JS -->
-      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-14" id="participantsContainer"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="dimensionsContainer"></div>
     </div>
   </section>
 
   <!-- ========================================================
-       MODULE 5: 新手教師大補帖 & 行動方案 (PLAYBOOK)
+       MODULE: 新手教師大補帖 (PLAYBOOK)
        ======================================================== -->
-  <section id="playbook" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800">
+  <section id="playbook" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
           <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 新手教師實戰寶典
@@ -494,45 +768,35 @@
         </p>
       </div>
 
-      <!-- Four Keys Poster Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm card-hover group">
           <div class="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
             <img src="images/1151030-15-56柏華SEL情緒-議課教學優化的四大關鍵1.jpg" alt="議課教學優化的四大關鍵1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-            <div class="absolute bottom-3 left-3 bg-purple-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">
-              教學優化關鍵 · 關鍵 1 & 2
-            </div>
+            <div class="absolute bottom-3 left-3 bg-purple-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">關鍵 1 & 2</div>
           </div>
           <div class="p-6">
             <h4 class="text-lg font-bold text-slate-900 dark:text-white">【關鍵一】秩序指令與加分透明化 ｜ 【關鍵二】節奏放慢與思考留白</h4>
-            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-              以照相機口令快速定格課堂注意力，預先公布各級表現得分規準；4-7-8呼吸法配合柔和背景音，為學生個別思考保留 1~2 分鐘空白。
-            </p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">以照相機口令快速定格課堂注意力，預先公布各級表現得分規準；4-7-8呼吸法配合柔和背景音，為學生個別思考保留 1~2 分鐘空白。</p>
           </div>
         </div>
 
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm card-hover group">
           <div class="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
             <img src="images/1151030-15-56柏華SEL情緒-議課教學優化的四大關鍵2.jpg" alt="議課教學優化的四大關鍵2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-            <div class="absolute bottom-3 left-3 bg-purple-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">
-              教學優化關鍵 · 關鍵 3 & 4
-            </div>
+            <div class="absolute bottom-3 left-3 bg-purple-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">關鍵 3 & 4</div>
           </div>
           <div class="p-6">
             <h4 class="text-lg font-bold text-slate-900 dark:text-white">【關鍵三】接納多元追問理由 ｜ 【關鍵四】教材光譜與後排可讀性</h4>
-            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-              以『為什麼你會這樣想？』代替立刻否定或代替作答；情緒警報增列平靜綠燈，簡報關鍵字體放大至 36pt 以上提升後排舒適度。
-            </p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">以『為什麼你會這樣想？』代替立刻否定或代替作答；情緒警報增列平靜綠燈，簡報關鍵字體放大至 36pt 以上提升後排舒適度。</p>
           </div>
         </div>
       </div>
 
-      <!-- Action Checklist Interactive Container -->
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm mb-14">
         <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Action Plan</span>
-            <h3 class="text-2xl font-black text-slate-900 dark:text-white">柏華老師後續教學精進行動追蹤清單</h3>
+            <h3 class="text-2xl font-black text-slate-900 dark:text-white">石柏華老師後續教學精進行動追蹤清單</h3>
           </div>
           <div class="flex items-center gap-2 text-xs font-semibold">
             <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">
@@ -543,18 +807,15 @@
             </span>
           </div>
         </div>
-
-        <div class="space-y-6" id="actionPlanContainer">
-          <!-- Populated by JS -->
-        </div>
+        <div class="space-y-6" id="actionPlanContainer"></div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       MODULE 5-B: 全景心智圖 (MINDMAP)
+       MODULE: 全景心智圖 (MINDMAP)
        ======================================================== -->
-  <section id="mindmap" class="py-16 sm:py-24 bg-slate-100/60 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
+  <section id="mindmap" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 text-xs font-bold uppercase tracking-wider mb-3">
@@ -564,20 +825,18 @@
           議課回饋與改進 全景心智圖
         </h2>
         <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-          以七大主軸結構化萃取現場研討精華，點擊各分枝即可快速探索詳細的教學策略與檢討要點。
+          以七大主軸結構化萃取現場研討精華，完整呈現教學策略與檢討要點。
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="mindmapContainer">
-        <!-- Populated by JS -->
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="mindmapContainer"></div>
     </div>
   </section>
 
   <!-- ========================================================
-       MODULE 6: 資源與文檔下載中心 (DOWNLOADS)
+       MODULE: 資源與文檔下載中心 (DOWNLOADS)
        ======================================================== -->
-  <section id="downloads" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800">
+  <section id="downloads" class="py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">
@@ -587,13 +846,11 @@
           全套教材、簡報與議課文檔下載中心
         </h2>
         <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-          收錄公開課教案、教學投影片 PPTX、議課大補帖、Teaching Playbook、正式議課紀錄表與 4.3 萬字真實逐字稿。
+          收錄最新《教學計劃（石伯華教案）.pdf》、《情緒防爆三關挑戰賽 .pdf》、演示簡報 PPTX、議課大補帖與 4.3 萬字真實逐字稿。
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="documentsGrid">
-        <!-- Populated by JS -->
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="documentsGrid"></div>
     </div>
   </section>
 
@@ -620,7 +877,7 @@
           <span>•</span>
           <span>演示日期：115年10月30日</span>
           <span>•</span>
-          <a href="#curriculum" class="hover:text-purple-600 transition-colors">回到頁首</a>
+          <a href="#lesson-plan" class="hover:text-purple-600 transition-colors">回教案說明</a>
         </div>
       </div>
 
@@ -631,25 +888,75 @@
   </footer>
 
   <!-- ========================================================
+       CHALLENGE COMPLETION MODAL / CERTIFICATE
+       ======================================================== -->
+  <div id="challengeModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeChallengeModal()" aria-label="關閉" class="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="printableCertificate" class="print-area">
+        <div class="text-center pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-purple-600 to-rose-500 flex items-center justify-center text-white mb-2 shadow-md">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-extrabold uppercase">Mission Accomplished</span>
+          <h3 class="text-2xl font-black text-slate-900 dark:text-white mt-2">情緒防爆通關任務卡</h3>
+          <p class="text-xs text-slate-500 italic mt-0.5">「情緒調節不是忍耐，是把控制權拿回來」</p>
+        </div>
+
+        <div class="my-4 space-y-3 text-xs sm:text-sm">
+          <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+            <span class="text-slate-500">挑戰學生：</span>
+            <span id="certStudentInfo" class="font-bold text-slate-900 dark:text-white">王小明（8年3班 12號）</span>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+            <span class="text-slate-500">初始情緒與強度：</span>
+            <span id="certEmotionIntensity" class="font-bold text-purple-600 dark:text-purple-400">委屈（強度 7 分）</span>
+          </div>
+          <div class="p-3 rounded-xl bg-purple-50/50 dark:bg-purple-950/20 border border-purple-100 dark:border-purple-900/40">
+            <div class="font-bold text-purple-700 dark:text-purple-300">關卡 1：身體慢速放氣</div>
+            <div id="certBreathResult" class="text-slate-600 dark:text-slate-300 mt-1">4-7-8 呼吸 3 次完成。身體感覺：胸口沒那麼悶了。</div>
+          </div>
+          <div class="p-3 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40">
+            <div class="font-bold text-amber-800 dark:text-amber-300">關卡 2：想法地雷拆除</div>
+            <div id="certThoughtResult" class="text-slate-600 dark:text-slate-300 mt-1">
+              <strong>客觀事實：</strong>已讀不回<br>
+              <strong>安全想法：</strong>對方可能在忙，不用拿別人的行為怪罪自己。
+            </div>
+          </div>
+          <div class="p-3 rounded-xl bg-sky-50/50 dark:bg-sky-950/20 border border-sky-100 dark:border-sky-900/40">
+            <div class="font-bold text-sky-800 dark:text-sky-300">關卡 3：戰術登出行為</div>
+            <div id="certLogoutResult" class="text-slate-600 dark:text-slate-300 mt-1">聽音樂放鬆、洗把臉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 pt-3 no-print">
+        <button onclick="window.print()" class="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+          <i data-lucide="printer" class="w-4 h-4"></i> 列印任務卡
+        </button>
+        <button onclick="copyCertificateText()" class="flex-1 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+          <i data-lucide="copy" class="w-4 h-4"></i> 複製文字成果
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
        IMAGE LIGHTBOX MODAL
        ======================================================== -->
   <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
-    <!-- Close Button -->
     <button id="lightboxClose" aria-label="關閉" class="absolute top-4 right-4 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
       <i data-lucide="x" class="w-6 h-6"></i>
     </button>
-
-    <!-- Prev Button -->
     <button id="lightboxPrev" aria-label="上一張" class="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
       <i data-lucide="chevron-left" class="w-6 h-6"></i>
     </button>
-
-    <!-- Next Button -->
     <button id="lightboxNext" aria-label="下一張" class="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
       <i data-lucide="chevron-right" class="w-6 h-6"></i>
     </button>
-
-    <!-- Image & Caption Container -->
     <div class="max-w-4xl w-full flex flex-col items-center">
       <div class="relative max-h-[75vh] flex items-center justify-center">
         <img id="lightboxImg" src="" alt="" class="max-h-[75vh] max-w-full rounded-2xl object-contain shadow-2xl" />
@@ -666,106 +973,415 @@
   <!-- Load siteData and Application Logic -->
   <script src="data.js"></script>
   <script>
-    // Global state
+    // State
+    let currentSlideIndex = 0;
+    let autoPlayTimer = null;
+    let breathingInterval = null;
+    let breathingRound = 0;
     let currentPhotoIndex = 0;
     let filteredGallery = siteData.gallery;
+    let selectedEmotion = "生氣";
+    let selectedBodyAlarms = [];
+    let selectedLogoutBehaviors = [];
 
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Initialize Lucide Icons
       lucide.createIcons();
 
-      // 2. Render SEL Pillars
-      renderSelPillars();
+      // 1. Render Lesson Plan
+      renderLessonPlan();
 
-      // 3. Render 3 Stages
-      renderStages();
+      // 2. Render Slides Player
+      renderSlidesPlayer();
 
-      // 4. Render Video Section
+      // 3. Render Interactive Challenge
+      renderInteractiveChallenge();
+
+      // 4. Render Videos
       renderVideos();
 
-      // 5. Render Photo Gallery
+      // 5. Render Gallery
       renderGallery('all');
 
-      // 6. Render Participants & Feedback Matrix
+      // 6. Render Feedback
       renderFeedback();
 
-      // 7. Render Action Plan
+      // 7. Render Playbook & Mindmap
       renderActionPlan();
-
-      // 8. Render Mindmap
       renderMindmap();
 
-      // 9. Render Documents
+      // 8. Render Documents
       renderDocuments();
 
-      // 10. Event Listeners (Theme, Mobile menu, Lightbox, etc.)
+      // 9. Setup Event Listeners
       setupEventListeners();
 
-      // Refresh icons for dynamically generated markup
       lucide.createIcons();
     });
 
     // ==========================================
-    // RENDER FUNCTIONS
+    // 1. LESSON PLAN MODULE
     // ==========================================
-
-    function renderSelPillars() {
-      const container = document.getElementById('selPillarsContainer');
-      const colorsMap = {
-        rose: 'border-rose-200 dark:border-rose-900/50 bg-rose-50/50 dark:bg-rose-950/20 text-rose-600 dark:text-rose-400',
-        amber: 'border-amber-200 dark:border-amber-900/50 bg-amber-50/50 dark:bg-amber-950/20 text-amber-600 dark:text-amber-400',
-        emerald: 'border-emerald-200 dark:border-emerald-900/50 bg-emerald-50/50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400',
-        sky: 'border-sky-200 dark:border-sky-900/50 bg-sky-50/50 dark:bg-sky-950/20 text-sky-600 dark:text-sky-400',
-        indigo: 'border-indigo-200 dark:border-indigo-900/50 bg-indigo-50/50 dark:bg-indigo-950/20 text-indigo-600 dark:text-indigo-400',
-      };
-
-      container.innerHTML = siteData.curriculum.selPillars.map(p => `
-        <div class="border rounded-2xl p-5 ${colorsMap[p.color] || colorsMap.indigo} card-hover flex flex-col justify-between">
+    function renderLessonPlan() {
+      // 4 Lessons Map
+      const fourContainer = document.getElementById('fourLessonsContainer');
+      fourContainer.innerHTML = siteData.lessonPlan.fourLessons.map((l, i) => `
+        <div class="bg-white dark:bg-slate-900 border ${i === 3 ? 'border-rose-400 ring-2 ring-rose-500/20 shadow-md' : 'border-slate-200 dark:border-slate-800'} rounded-2xl p-5 flex flex-col justify-between card-hover">
           <div>
-            <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white mb-2">${p.title}</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${p.desc}</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between text-xs font-bold">
-            <span>SEL指標</span>
-            <i data-lucide="check" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function renderStages() {
-      const container = document.getElementById('stagesContainer');
-      container.innerHTML = siteData.curriculum.stages.map((s, idx) => `
-        <div class="relative bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 flex flex-col justify-between card-hover">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold">
-                ${s.step} · ${s.duration}
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${i === 3 ? 'bg-rose-500 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">
+                ${l.lesson}
               </span>
-              <span class="text-xs font-semibold text-slate-400">Stage 0${idx + 1}</span>
+              ${i === 3 ? '<span class="text-[11px] font-bold text-rose-500">★ 本次公開課</span>' : ''}
             </div>
-            <div class="text-xs font-bold text-purple-600 dark:text-purple-400 mb-1">${s.badge}</div>
-            <h4 class="text-lg font-black text-slate-900 dark:text-white mb-3">${s.title}</h4>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">${s.goals}</p>
+            <h4 class="text-base font-black text-slate-900 dark:text-white">${l.theme}</h4>
+            <div class="text-xs font-semibold text-purple-600 dark:text-purple-400 mt-0.5 mb-3">${l.activity}</div>
+            <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+              ${l.goals.map(g => `<li class="flex items-start gap-1"><span class="text-rose-500 mt-0.5">•</span><span>${g}</span></li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `).join('');
 
-            <div class="space-y-2 border-t border-slate-200 dark:border-slate-700 pt-4">
-              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">主要活動環節：</div>
-              ${s.activities.map(act => `
-                <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-purple-600 shrink-0 mt-0.5"></i>
-                  <span>${act}</span>
-                </div>
-              `).join('')}
+      // Procedure Timetable
+      const procContainer = document.getElementById('demoProcedureContainer');
+      procContainer.innerHTML = siteData.lessonPlan.demoProcedure.map((p, idx) => `
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 card-hover">
+          <div class="flex items-start gap-3 flex-1">
+            <span class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
+              ${idx + 1}
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">${p.section}</h4>
+                <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold">${p.time}</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 whitespace-pre-line leading-relaxed">${p.desc}</p>
             </div>
+          </div>
+          <div class="text-xs text-slate-400 bg-slate-50 dark:bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-200/60 dark:border-slate-700/60 shrink-0">
+            ${p.remark}
           </div>
         </div>
       `).join('');
     }
 
+    // ==========================================
+    // 2. SLIDES VIEWER MODULE
+    // ==========================================
+    function renderSlidesPlayer() {
+      const container = document.getElementById('slidesThumbnailsContainer');
+      container.innerHTML = siteData.slides.map((s, i) => `
+        <button onclick="goToSlide(${i})" id="slideThumb-${i}" class="slide-thumb shrink-0 w-20 h-12 rounded-lg overflow-hidden border-2 transition-all ${i === 0 ? 'border-amber-400 scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'}">
+          <img src="${s.img}" alt="Slide ${s.num}" class="w-full h-full object-cover" loading="lazy" />
+        </button>
+      `).join('');
+
+      updateSlideView();
+    }
+
+    window.goToSlide = function(index) {
+      if (index < 0 || index >= siteData.slides.length) return;
+      currentSlideIndex = index;
+      updateSlideView();
+    };
+
+    window.prevSlide = function() {
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        updateSlideView();
+      }
+    };
+
+    window.nextSlide = function() {
+      if (currentSlideIndex < siteData.slides.length - 1) {
+        currentSlideIndex++;
+        updateSlideView();
+      } else if (autoPlayTimer) {
+        currentSlideIndex = 0;
+        updateSlideView();
+      }
+    };
+
+    function updateSlideView() {
+      const s = siteData.slides[currentSlideIndex];
+      const imgEl = document.getElementById('currentSlideImg');
+      imgEl.src = s.img;
+      imgEl.alt = s.title;
+
+      document.getElementById('slideCategoryBadge').textContent = s.category;
+      document.getElementById('slideCounterText').textContent = `Page ${String(s.num).padStart(2, '0')} / ${siteData.slides.length}`;
+      document.getElementById('slideTitle').innerHTML = `<i data-lucide="sparkle" class="w-4 h-4 text-amber-400"></i> ${s.title}`;
+      document.getElementById('slideNotes').textContent = s.notes;
+
+      // Update thumbnails border
+      document.querySelectorAll('.slide-thumb').forEach((thumb, idx) => {
+        if (idx === currentSlideIndex) {
+          thumb.classList.remove('border-transparent', 'opacity-60');
+          thumb.classList.add('border-amber-400', 'scale-105', 'opacity-100');
+          thumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          thumb.classList.remove('border-amber-400', 'scale-105', 'opacity-100');
+          thumb.classList.add('border-transparent', 'opacity-60');
+        }
+      });
+
+      lucide.createIcons();
+    }
+
+    window.toggleAutoPlay = function() {
+      const btnText = document.getElementById('autoPlayText');
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+        btnText.textContent = '自動播放';
+      } else {
+        autoPlayTimer = setInterval(nextSlide, 3500);
+        btnText.textContent = '暫停播放';
+      }
+    };
+
+    window.toggleSlideFullscreen = function() {
+      const viewport = document.getElementById('slideViewport');
+      if (!document.fullscreenElement) {
+        viewport.requestFullscreen().catch(err => alert(err.message));
+      } else {
+        document.exitFullscreen();
+      }
+    };
+
+    // ==========================================
+    // 3. INTERACTIVE CHALLENGE MODULE
+    // ==========================================
+    function renderInteractiveChallenge() {
+      // Emotion Tags
+      const emoContainer = document.getElementById('emotionTagsContainer');
+      emoContainer.innerHTML = siteData.challenge.emotions.map(e => `
+        <button type="button" onclick="selectEmotion('${e.name}')" class="emotion-btn px-3.5 py-1.5 rounded-xl text-xs font-bold border transition-all ${e.name === '生氣' ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-50'}">
+          ${e.name}
+        </button>
+      `).join('');
+
+      // Intensity Slider Listener
+      const slider = document.getElementById('intensitySlider');
+      slider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+        const badge = document.getElementById('intensityBadge');
+        if (val <= 2) {
+          badge.className = "px-3 py-1 rounded-full text-xs font-black bg-emerald-500 text-white shadow-sm";
+          badge.textContent = `強度：${val} 分（平靜安全）`;
+        } else if (val <= 6) {
+          badge.className = "px-3 py-1 rounded-full text-xs font-black bg-amber-500 text-white shadow-sm";
+          badge.textContent = `強度：${val} 分（情緒升溫中）`;
+        } else {
+          badge.className = "px-3 py-1 rounded-full text-xs font-black bg-rose-600 text-white shadow-sm animate-pulse";
+          badge.textContent = `強度：${val} 分（即將爆炸！啟動防爆）`;
+        }
+      });
+
+      // Body Alarms Checkbox Cards
+      const alarmContainer = document.getElementById('bodyAlarmsContainer');
+      alarmContainer.innerHTML = siteData.challenge.bodyAlarms.map(a => `
+        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/40 hover:bg-purple-50 cursor-pointer text-xs font-semibold transition-colors">
+          <input type="checkbox" value="${a.label}" onchange="toggleBodyAlarm(this)" class="w-4 h-4 text-purple-600 rounded border-slate-300 focus:ring-purple-500" />
+          <span>${a.label}</span>
+        </label>
+      `).join('');
+
+      // Scenarios Presets
+      const presetContainer = document.getElementById('scenariosPresetContainer');
+      presetContainer.innerHTML = siteData.challenge.presetScenarios.map((sc, i) => `
+        <button type="button" onclick="applyScenarioPreset(${i})" class="text-left p-2.5 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/80 dark:border-amber-800 hover:bg-amber-100 text-xs font-bold text-amber-900 dark:text-amber-200 transition-colors">
+          ${sc.title}
+        </button>
+      `).join('');
+
+      // Logout Choices
+      const logoutContainer = document.getElementById('logoutChoicesContainer');
+      logoutContainer.innerHTML = siteData.challenge.logoutBehaviors.map(b => `
+        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-500 cursor-pointer text-xs font-bold text-slate-800 dark:text-slate-200 transition-all">
+          <input type="checkbox" value="${b.label}" onchange="toggleLogout(this)" class="w-4 h-4 text-sky-600 rounded border-slate-300 focus:ring-sky-500" />
+          <i data-lucide="${b.icon}" class="w-4 h-4 text-sky-500"></i>
+          <span>${b.label}</span>
+        </label>
+      `).join('');
+    }
+
+    window.selectEmotion = function(emo) {
+      selectedEmotion = emo;
+      document.querySelectorAll('.emotion-btn').forEach(btn => {
+        if (btn.textContent.trim() === emo) {
+          btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+          btn.classList.add('bg-rose-600', 'text-white', 'border-rose-600', 'shadow-sm');
+        } else {
+          btn.classList.remove('bg-rose-600', 'text-white', 'border-rose-600', 'shadow-sm');
+          btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        }
+      });
+    };
+
+    window.toggleBodyAlarm = function(input) {
+      if (input.checked) {
+        selectedBodyAlarms.push(input.value);
+      } else {
+        selectedBodyAlarms = selectedBodyAlarms.filter(x => x !== input.value);
+      }
+    };
+
+    window.toggleLogout = function(input) {
+      if (input.checked) {
+        selectedLogoutBehaviors.push(input.value);
+      } else {
+        selectedLogoutBehaviors = selectedLogoutBehaviors.filter(x => x !== input.value);
+      }
+    };
+
+    window.setBodyFeel = function(text) {
+      document.getElementById('bodyFeelInput').value = text;
+    };
+
+    window.applyScenarioPreset = function(index) {
+      const sc = siteData.challenge.presetScenarios[index];
+      if (!sc) return;
+      document.getElementById('eventFactInput').value = sc.event;
+      document.getElementById('toxicThoughtInput').value = sc.toxicThought;
+      document.getElementById('safeThoughtInput').value = sc.safeThought;
+    };
+
+    // 4-7-8 Breathing Exercise Animation
+    window.startBreathingExercise = function() {
+      const btn = document.getElementById('startBreatheBtn');
+      const circle = document.getElementById('breatheCircle');
+      const actionText = document.getElementById('breatheActionText');
+      const timerText = document.getElementById('breatheTimerText');
+      const badge = document.getElementById('breathingProgressBadge');
+
+      btn.disabled = true;
+      btn.classList.add('opacity-50', 'cursor-not-allowed');
+      breathingRound = 0;
+
+      function runRound() {
+        if (breathingRound >= 3) {
+          btn.disabled = false;
+          btn.classList.remove('opacity-50', 'cursor-not-allowed');
+          actionText.textContent = "完成";
+          timerText.textContent = "3 次挑戰成功！";
+          circle.style.transform = "scale(1)";
+          badge.textContent = "完成進度：3 / 3 次 (挑戰成功！)";
+          badge.className = "text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-900/60 px-3 py-1 rounded-full animate-bounce";
+          return;
+        }
+
+        breathingRound++;
+        badge.textContent = `完成進度：${breathingRound} / 3 次`;
+
+        // 1. Inhale 4s
+        actionText.textContent = "吸氣";
+        let sec = 4;
+        timerText.textContent = `吸氣 ${sec} 秒`;
+        circle.style.transition = "transform 4s ease-out";
+        circle.style.transform = "scale(1.5)";
+
+        const inhaleTimer = setInterval(() => {
+          sec--;
+          if (sec > 0) {
+            timerText.textContent = `吸氣 ${sec} 秒`;
+          } else {
+            clearInterval(inhaleTimer);
+            // 2. Hold 7s
+            actionText.textContent = "憋氣";
+            let holdSec = 7;
+            timerText.textContent = `憋氣 ${holdSec} 秒`;
+            circle.style.transition = "transform 0.5s ease";
+
+            const holdTimer = setInterval(() => {
+              holdSec--;
+              if (holdSec > 0) {
+                timerText.textContent = `憋氣 ${holdSec} 秒`;
+              } else {
+                clearInterval(holdTimer);
+                // 3. Exhale 8s
+                actionText.textContent = "慢吐氣";
+                let exhaleSec = 8;
+                timerText.textContent = `慢吐氣 ${exhaleSec} 秒`;
+                circle.style.transition = "transform 8s ease-in";
+                circle.style.transform = "scale(1)";
+
+                const exhaleTimer = setInterval(() => {
+                  exhaleSec--;
+                  if (exhaleSec > 0) {
+                    timerText.textContent = `慢吐氣 ${exhaleSec} 秒`;
+                  } else {
+                    clearInterval(exhaleTimer);
+                    // Next round
+                    runRound();
+                  }
+                }, 1000);
+              }
+            }, 1000);
+          }
+        }, 1000);
+      }
+
+      runRound();
+    };
+
+    window.submitChallengeCard = function() {
+      const name = document.getElementById('studentName').value || "同學";
+      const sClass = document.getElementById('studentClass').value || "八年級";
+      const sNo = document.getElementById('studentNo').value || "";
+      const customEmo = document.getElementById('customEmotionInput').value;
+      const finalEmotion = customEmo || selectedEmotion;
+      const intensity = document.getElementById('intensitySlider').value;
+      const feel = document.getElementById('bodyFeelInput').value || "呼吸平緩放鬆";
+      const fact = document.getElementById('eventFactInput').value || "日常人際事件";
+      const safeThought = document.getElementById('safeThoughtInput').value || "換位思考，安全面對";
+      const customLogout = document.getElementById('customLogoutInput').value;
+      const finalLogout = [...selectedLogoutBehaviors, customLogout].filter(Boolean).join('、') || "聽音樂放鬆、離開現場10秒";
+
+      document.getElementById('certStudentInfo').textContent = `${name}（${sClass} ${sNo ? sNo + '號' : ''}）`;
+      document.getElementById('certEmotionIntensity').textContent = `${finalEmotion}（強度 ${intensity} 分）`;
+      document.getElementById('certBreathResult').textContent = `4-7-8 呼吸 3 次完成。身體感覺：${feel}`;
+      document.getElementById('certThoughtResult').innerHTML = `<strong>客觀事實：</strong>${fact}<br><strong>安全想法：</strong>${safeThought}`;
+      document.getElementById('certLogoutResult').textContent = finalLogout;
+
+      const modal = document.getElementById('challengeModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+      }, 10);
+    };
+
+    window.closeChallengeModal = function() {
+      const modal = document.getElementById('challengeModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+      }, 300);
+    };
+
+    window.copyCertificateText = function() {
+      const student = document.getElementById('certStudentInfo').textContent;
+      const emo = document.getElementById('certEmotionIntensity').textContent;
+      const breath = document.getElementById('certBreathResult').textContent;
+      const thought = document.getElementById('certThoughtResult').innerText;
+      const logout = document.getElementById('certLogoutResult').textContent;
+
+      const text = `【石柏華公開觀議課 · 情緒防爆挑戰成果卡】\n學生：${student}\n情緒強度：${emo}\n關卡一(身體)：${breath}\n關卡二(想法)：${thought}\n關卡三(行為)：${logout}\n座右銘：情緒調節不是忍耐，是把控制權拿回來！`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("已成功複製通關成果文字！可貼上至班級群組或學習歷程檔案。");
+      });
+    };
+
+    // ==========================================
+    // 4. VIDEOS MODULE
+    // ==========================================
     function renderVideos() {
       const tabsContainer = document.getElementById('videoTabsContainer');
       tabsContainer.innerHTML = siteData.videos.map((v, i) => `
-        <button onclick="switchVideo('${v.id}')" id="vtab-${v.id}" class="video-tab-btn px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2 ${i === 0 ? 'bg-purple-600 text-white border-purple-600 shadow-md' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700'}">
+        <button onclick="switchVideo('${v.id}')" id="vtab-${v.id}" class="video-tab-btn px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2 ${i === 0 ? 'bg-purple-600 text-white border-purple-600 shadow-md' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:bg-slate-50'}">
           <i data-lucide="play" class="w-3.5 h-3.5"></i>
           <span>${v.title.split('——')[0]}</span>
         </button>
@@ -814,6 +1430,9 @@
       lucide.createIcons();
     }
 
+    // ==========================================
+    // 5. GALLERY MODULE
+    // ==========================================
     function renderGallery(cat) {
       const grid = document.getElementById('photoGrid');
       if (cat === 'all') {
@@ -845,8 +1464,10 @@
       lucide.createIcons();
     }
 
+    // ==========================================
+    // 6. FEEDBACK MODULE
+    // ==========================================
     function renderFeedback() {
-      // Participants
       const partContainer = document.getElementById('participantsContainer');
       partContainer.innerHTML = siteData.metadata.participants.map(p => `
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-center card-hover">
@@ -859,7 +1480,6 @@
         </div>
       `).join('');
 
-      // Dimensions
       const dimContainer = document.getElementById('dimensionsContainer');
       dimContainer.innerHTML = siteData.feedbackMatrix.dimensions.map(d => `
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between card-hover">
@@ -874,7 +1494,6 @@
               </div>
             </div>
 
-            <!-- Highlights -->
             <div class="mb-5 bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/40 rounded-2xl p-4">
               <div class="text-xs font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 mb-2">
                 <i data-lucide="check-circle" class="w-4 h-4"></i> 觀課亮點與肯定 (Highlights)
@@ -884,7 +1503,6 @@
               </ul>
             </div>
 
-            <!-- Improvements -->
             <div class="mb-5 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-2xl p-4">
               <div class="text-xs font-bold text-amber-700 dark:text-amber-400 flex items-center gap-1.5 mb-2">
                 <i data-lucide="lightbulb" class="w-4 h-4"></i> 具體教學精進建議 (Improvements)
@@ -895,7 +1513,6 @@
             </div>
           </div>
 
-          <!-- Quotes -->
           <div class="border-t border-slate-100 dark:border-slate-800 pt-4 space-y-3">
             ${d.quotes.map(q => `
               <div class="text-xs text-slate-600 dark:text-slate-300 italic border-l-2 border-purple-400 pl-3 py-0.5">
@@ -908,6 +1525,9 @@
       `).join('');
     }
 
+    // ==========================================
+    // 7. PLAYBOOK & MINDMAP MODULE
+    // ==========================================
     function renderActionPlan() {
       const container = document.getElementById('actionPlanContainer');
       container.innerHTML = siteData.actionChecklist.map(sec => `
@@ -962,6 +1582,9 @@
       `).join('');
     }
 
+    // ==========================================
+    // 8. DOCUMENTS MODULE
+    // ==========================================
     function renderDocuments() {
       const grid = document.getElementById('documentsGrid');
       grid.innerHTML = siteData.documents.map(d => `
@@ -979,21 +1602,17 @@
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
             <span class="text-[11px] text-slate-400 truncate max-w-[150px]">${d.filename.split('/').pop()}</span>
-            <div class="flex items-center gap-2">
-              <a href="${d.aliasPath}" download class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all shadow-sm active:scale-95">
-                <i data-lucide="download" class="w-3.5 h-3.5"></i>
-                下載
-              </a>
-            </div>
+            <a href="${d.aliasPath}" download class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-all shadow-sm active:scale-95">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> 下載
+            </a>
           </div>
         </div>
       `).join('');
     }
 
     // ==========================================
-    // LIGHTBOX LOGIC
+    // 9. LIGHTBOX & GLOBAL CONTROLS
     // ==========================================
-
     window.openLightbox = function(idx) {
       currentPhotoIndex = idx;
       updateLightboxContent();
@@ -1083,19 +1702,23 @@
         if (e.target.id === 'lightboxModal') closeLightbox();
       });
 
-      // Keyboard navigation for Lightbox
+      // Keyboard navigation for Lightbox and Slides
       document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('lightboxModal');
-        if (modal.classList.contains('hidden')) return;
-
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') {
-          currentPhotoIndex = (currentPhotoIndex - 1 + filteredGallery.length) % filteredGallery.length;
-          updateLightboxContent();
-        }
-        if (e.key === 'ArrowRight') {
-          currentPhotoIndex = (currentPhotoIndex + 1) % filteredGallery.length;
-          updateLightboxContent();
+        if (!modal.classList.contains('hidden')) {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') {
+            currentPhotoIndex = (currentPhotoIndex - 1 + filteredGallery.length) % filteredGallery.length;
+            updateLightboxContent();
+          }
+          if (e.key === 'ArrowRight') {
+            currentPhotoIndex = (currentPhotoIndex + 1) % filteredGallery.length;
+            updateLightboxContent();
+          }
+        } else {
+          // Slide viewer keyboard shortcuts
+          if (e.key === 'ArrowLeft') prevSlide();
+          if (e.key === 'ArrowRight') nextSlide();
         }
       });
     }

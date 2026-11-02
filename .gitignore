@@ -6,6 +6,12 @@
 # Ignore unrelated PPT from previous project
 議課/115南投國中_環境教育考評複評到校輔導.pptx
 
+# Node & Build artifacts
+node_modules/
+package.json
+package-lock.json
+scripts/
+
 # OS & Editor files
 .DS_Store
 Thumbs.db
