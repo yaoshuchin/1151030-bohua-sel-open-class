@@ -1,0 +1,12 @@
+# Ignore backup raw camera files to keep repo fast and under limits
+影音/original_heic/
+影音/*.HEIC
+影音/*.MOV
+
+# Ignore unrelated PPT from previous project
+議課/115南投國中_環境教育考評複評到校輔導.pptx
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.tmp
