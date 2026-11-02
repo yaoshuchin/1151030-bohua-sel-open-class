@@ -1,23 +1,23 @@
-/**
- * 不柏華公開觀議課 - 核心資料庫 (siteData)
- * 南投縣立南投國中 115學年度 專任輔導教師李柏華 · SEL社會情緒學習公開授課與議課研討成果旗艦網
+﻿/**
+ * 石柏華公開觀議課 - 核心資料庫 (siteData)
+ * 南投縣立南投國中 115學年度 專任輔導教師石柏華 · SEL社會情緒學習公開授課與議課研討成果旗艦網
  */
 
 const siteData = {
   metadata: {
-    siteTitle: "不柏華公開觀議課",
-    fullTitle: "不柏華公開觀議課 ｜ 南投國中 115學年度 SEL社會情緒學習公開授課與議課研討成果旗艦網",
+    siteTitle: "石柏華公開觀議課",
+    fullTitle: "石柏華公開觀議課 ｜ 南投國中 115學年度 SEL社會情緒學習公開授課與議課研討成果旗艦網",
     topic: "情緒防爆指南：面對情緒 · 做情緒的主人 (The Emotional Toolkit)",
     school: "南投縣立南投國民中學",
     subject: "綜合活動領域 · 專任輔導活動",
-    teacher: "李柏華 專任輔導教師",
+    teacher: "石柏華 專任輔導教師",
     demoDate: "115年10月30日 (2026/10/30)",
     classTime: "15:08 ~ 15:53 (第7節 公開演示課)",
     meetingTime: "15:56 ~ 16:45 (第8節 觀課回饋與議課研討)",
     location: "南投國中 專題活動教室",
     targetGrade: "國中七年級 / 八年級學生",
     participants: [
-      { name: "李柏華", title: "專任輔導教師", role: "公開課授課教師", icon: "user-check" },
+      { name: "石柏華", title: "專任輔導教師", role: "公開課授課教師", icon: "user-check" },
       { name: "許正儀", title: "教務主任", role: "教學行政領導與觀課督導", icon: "award" },
       { name: "師培指導教授", title: "師資培育指導委員", role: "教案架構與評量指導專家", icon: "graduation-cap" },
       { name: "李協融", title: "公民科專任教師", role: "班級經營與現場節奏回饋委員", icon: "users" },
