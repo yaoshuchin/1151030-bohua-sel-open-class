@@ -227,6 +227,26 @@ const siteData = {
     ]
   },
 
+  // 1151030 完整公開授課 YouTube 直播錄影
+  youtubeLive: {
+    id: "yt-live-1",
+    title: "1151030投-柏華公開課",
+    url: "https://youtube.com/live/qcdgb6GTIMM",
+    embedUrl: "https://www.youtube.com/embed/qcdgb6GTIMM",
+    duration: "45 分鐘全紀錄",
+    badge: "現場直播存檔",
+    school: "南投縣立南投國中",
+    teacher: "石柏華 專任輔導教師",
+    topic: "情緒防爆指南：面對情緒 · 做情緒的主人 (The Emotional Toolkit)",
+    desc: "115年10月30日第7節（15:08 ~ 15:53）公開演示課現場全程實況錄影。完整呈現引起動機、大腦杏仁核腦科學解析、4-7-8 呼吸深層放鬆引導、生活情境拆彈演練與戰術登出行為承諾。",
+    chapters: [
+      { time: "00:00 - 08:00", title: "引起動機與情緒溫度計", desc: "破冰活動、身體晴雨表與覺察情緒警報訊號" },
+      { time: "08:00 - 25:00", title: "腦科學解密與 4-7-8 呼吸", desc: "杏仁核 vs 前額葉拔河、身體慢速放氣沉浸演練" },
+      { time: "25:00 - 38:00", title: "情境想法拆彈小組演練", desc: "檢視客觀事實、停止想法自動加料與安全轉念" },
+      { time: "38:00 - 45:00", title: "戰術登出行為與自我承諾", desc: "選擇正向轉移卡片、全班統整與公開課總結" }
+    ]
+  },
+
   videos: [
     {
       id: "v1",
