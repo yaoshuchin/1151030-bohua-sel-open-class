@@ -82,13 +82,160 @@
 
     /* Print Styles */
     @media print {
-      nav, footer, .no-print, button { display: none !important; }
+      nav, footer, .no-print, button, #authGateOverlay { display: none !important; }
       body { background: white !important; color: black !important; }
       .print-area { display: block !important; }
     }
+
+    /* Authentication Gate */
+    html.is-locked, html.is-locked body {
+      overflow: hidden !important;
+      height: 100% !important;
+    }
+    html.is-locked #mainAppWrapper {
+      display: none !important;
+    }
+    html.is-authenticated #authGateOverlay {
+      display: none !important;
+    }
+    @keyframes lockShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .animate-shake {
+      animation: lockShake 0.4s ease-in-out;
+    }
   </style>
+
+  <!-- Immediate pre-render lock check to avoid flash of protected content -->
+  <script>
+    (function() {
+      try {
+        const s = sessionStorage.getItem('shibohua_auth');
+        const l = localStorage.getItem('shibohua_auth');
+        if (s === '049' || l === '049') {
+          document.documentElement.classList.add('is-authenticated');
+          document.documentElement.classList.remove('is-locked');
+        } else {
+          document.documentElement.classList.add('is-locked');
+          document.documentElement.classList.remove('is-authenticated');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('is-locked');
+      }
+    })();
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white transition-colors duration-300">
+
+  <!-- ========================================================
+       AUTH GATE LOCK SCREEN OVERLAY (Password: "049")
+       ======================================================== -->
+  <div id="authGateOverlay" class="fixed inset-0 z-[99999] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <!-- Ambient glowing backgrounds -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse" style="animation-delay: 1.5s;"></div>
+
+    <div id="authCard" class="relative w-full max-w-md bg-slate-900/90 border border-slate-800/90 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 shadow-2xl shadow-purple-950/50 text-center transition-all duration-300">
+      <!-- Lock Avatar -->
+      <div class="mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-rose-500 p-0.5 shadow-lg shadow-purple-500/30 flex items-center justify-center mb-5 group">
+        <div class="w-full h-full bg-slate-900/60 rounded-[22px] flex items-center justify-center text-white backdrop-blur-sm">
+          <i data-lucide="lock" class="w-8 h-8 text-purple-300"></i>
+        </div>
+      </div>
+
+      <!-- Title & School Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/70 border border-purple-800/60 text-purple-300 text-xs font-semibold mb-3">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
+        南投國中 115學年度 觀議課成果
+      </div>
+      <h2 class="text-xl sm:text-2xl font-black tracking-tight text-white mb-1.5">
+        石柏華公開觀議課
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-400 mb-6 leading-relaxed">
+        本站包含公開課教學影音、學生互動作品與議課研討紀錄。<br class="hidden sm:inline" />
+        請輸入通關密碼解鎖瀏覽。
+      </p>
+
+      <!-- Password Input Area -->
+      <div class="space-y-4 text-left">
+        <div class="relative">
+          <input 
+            type="password" 
+            id="authPasswordInput" 
+            maxlength="10" 
+            placeholder="請輸入密碼" 
+            autocomplete="current-password"
+            class="w-full text-center tracking-[0.35em] font-mono text-2xl font-bold py-3.5 px-12 rounded-2xl border-2 border-slate-700 bg-slate-950/80 text-white placeholder:text-slate-600 placeholder:text-base placeholder:tracking-normal focus:border-purple-500 focus:bg-slate-950 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all shadow-inner"
+            onkeydown="if(event.key === 'Enter') handleAuthSubmit()"
+          />
+          <button 
+            type="button" 
+            onclick="togglePasswordVisibility()" 
+            id="togglePasswordBtn" 
+            title="顯示/隱藏密碼" 
+            class="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-slate-400 hover:text-white transition-colors"
+          >
+            <i data-lucide="eye" id="passwordEyeIcon" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Touch / On-screen Number Keypad -->
+        <div class="grid grid-cols-3 gap-2 pt-1 select-none">
+          <button type="button" onclick="appendKeypad('1')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">1</button>
+          <button type="button" onclick="appendKeypad('2')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">2</button>
+          <button type="button" onclick="appendKeypad('3')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">3</button>
+          <button type="button" onclick="appendKeypad('4')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">4</button>
+          <button type="button" onclick="appendKeypad('5')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">5</button>
+          <button type="button" onclick="appendKeypad('6')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">6</button>
+          <button type="button" onclick="appendKeypad('7')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">7</button>
+          <button type="button" onclick="appendKeypad('8')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">8</button>
+          <button type="button" onclick="appendKeypad('9')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">9</button>
+          <button type="button" onclick="clearKeypad()" class="py-2.5 rounded-xl bg-rose-950/40 hover:bg-rose-900/50 active:scale-95 text-rose-300 font-bold text-xs border border-rose-900/50 transition-all flex items-center justify-center gap-1">清除</button>
+          <button type="button" onclick="appendKeypad('0')" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-white font-mono font-bold text-lg border border-slate-700/60 transition-all">0</button>
+          <button type="button" onclick="backspaceKeypad()" class="py-2.5 rounded-xl bg-slate-800/70 hover:bg-slate-700 active:scale-95 text-slate-300 font-bold text-xs border border-slate-700/60 transition-all flex items-center justify-center gap-1">⌫ 刪除</button>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="flex items-center justify-between text-xs pt-1">
+          <label class="flex items-center gap-2 text-slate-300 cursor-pointer select-none">
+            <input type="checkbox" id="authRememberCheckbox" checked class="w-4 h-4 rounded border-slate-700 text-purple-600 focus:ring-purple-500 bg-slate-800" />
+            <span>記住此裝置登入狀態</span>
+          </label>
+          <span class="text-[11px] text-slate-500">（校內專用）</span>
+        </div>
+
+        <!-- Error message alert -->
+        <div id="authErrorMessage" class="hidden text-rose-400 bg-rose-950/40 border border-rose-900/60 rounded-xl p-3 text-xs font-bold text-center items-center justify-center gap-1.5 animate-shake">
+          <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 text-rose-400"></i>
+          <span>密碼不正確，請重新輸入！</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="button" 
+          onclick="handleAuthSubmit()" 
+          id="authSubmitBtn"
+          class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-rose-600 hover:from-purple-500 hover:to-rose-500 text-white font-bold text-base shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 active:scale-95 transition-all flex items-center justify-center gap-2"
+        >
+          <i data-lucide="unlock" class="w-5 h-5"></i>
+          <span>解鎖進入網站</span>
+        </button>
+      </div>
+
+      <!-- Hint Footer -->
+      <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
+        <span>石柏華專輔教師公開觀議課</span>
+        <span class="text-slate-400">南投國中 專任輔導</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MAIN APP WRAPPER (Protected Content)
+       ======================================================== -->
+  <div id="mainAppWrapper" class="min-h-screen flex flex-col">
 
   <!-- ========================================================
        TOP NAVBAR
@@ -131,8 +278,13 @@
           </a>
         </div>
 
-        <!-- Controls: Dark Mode & Mobile Menu Button -->
+        <!-- Controls: Lock/Logout, Dark Mode & Mobile Menu Button -->
         <div class="flex items-center gap-2">
+          <!-- Lock / Logout Button -->
+          <button onclick="lockPage()" title="重新鎖定網頁 / 登出" aria-label="重新鎖定" class="p-2 sm:px-3 sm:py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-rose-600 hover:border-rose-300 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-all flex items-center gap-1.5 text-xs font-bold">
+            <i data-lucide="lock" class="w-4 h-4 text-purple-600 dark:text-purple-400"></i>
+            <span class="hidden sm:inline">鎖定</span>
+          </button>
           <button id="themeToggle" aria-label="切換深淺模式" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
             <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
             <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
@@ -154,6 +306,11 @@
         <a href="#playbook" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">新手教師議課大補帖</a>
         <a href="#mindmap" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">全景心智圖</a>
         <a href="#downloads" class="mobile-nav-link block px-4 py-2.5 text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">教材與文檔下載中心</a>
+        <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+          <button onclick="lockPage()" class="w-full text-left px-4 py-2.5 text-base font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg flex items-center gap-2">
+            <i data-lucide="lock" class="w-4 h-4"></i>重新鎖定網頁（登出）
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -970,9 +1127,154 @@
     </div>
   </div>
 
+  </div> <!-- /#mainAppWrapper (Protected Content End) -->
+
   <!-- Load siteData and Application Logic -->
   <script src="data.js"></script>
   <script>
+    // ==========================================
+    // 0. AUTHENTICATION LOGIC (Password: "049")
+    // ==========================================
+    const AUTH_KEY = 'shibohua_auth';
+    const AUTH_SECRET = '049';
+
+    function isAuthorized() {
+      try {
+        return sessionStorage.getItem(AUTH_KEY) === AUTH_SECRET || localStorage.getItem(AUTH_KEY) === AUTH_SECRET;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    window.handleAuthSubmit = function() {
+      const input = document.getElementById('authPasswordInput');
+      const errorBox = document.getElementById('authErrorMessage');
+      const card = document.getElementById('authCard');
+      const rememberCheckbox = document.getElementById('authRememberCheckbox');
+      const val = (input.value || '').trim();
+
+      if (val === AUTH_SECRET) {
+        if (errorBox) {
+          errorBox.classList.add('hidden');
+          errorBox.classList.remove('flex');
+        }
+
+        try {
+          sessionStorage.setItem(AUTH_KEY, AUTH_SECRET);
+          if (rememberCheckbox && rememberCheckbox.checked) {
+            localStorage.setItem(AUTH_KEY, AUTH_SECRET);
+          } else {
+            localStorage.removeItem(AUTH_KEY);
+          }
+        } catch (e) {}
+
+        const overlay = document.getElementById('authGateOverlay');
+        if (overlay) {
+          overlay.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          overlay.style.opacity = '0';
+          overlay.style.transform = 'scale(1.02)';
+          overlay.style.pointerEvents = 'none';
+
+          setTimeout(() => {
+            document.documentElement.classList.remove('is-locked');
+            document.documentElement.classList.add('is-authenticated');
+            overlay.classList.add('hidden');
+            lucide.createIcons();
+          }, 350);
+        } else {
+          document.documentElement.classList.remove('is-locked');
+          document.documentElement.classList.add('is-authenticated');
+        }
+      } else {
+        if (errorBox) {
+          errorBox.classList.remove('hidden');
+          errorBox.classList.add('flex');
+        }
+        if (card) {
+          card.classList.add('animate-shake');
+          setTimeout(() => card.classList.remove('animate-shake'), 500);
+        }
+        input.value = '';
+        input.focus();
+      }
+    };
+
+    window.togglePasswordVisibility = function() {
+      const input = document.getElementById('authPasswordInput');
+      const icon = document.getElementById('passwordEyeIcon');
+      if (!input || !icon) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.setAttribute('data-lucide', 'eye-off');
+      } else {
+        input.type = 'password';
+        icon.setAttribute('data-lucide', 'eye');
+      }
+      lucide.createIcons();
+    };
+
+    window.appendKeypad = function(digit) {
+      const input = document.getElementById('authPasswordInput');
+      if (!input) return;
+      if (input.value.length < 10) {
+        input.value += digit;
+        const err = document.getElementById('authErrorMessage');
+        if (err) {
+          err.classList.add('hidden');
+          err.classList.remove('flex');
+        }
+      }
+    };
+
+    window.clearKeypad = function() {
+      const input = document.getElementById('authPasswordInput');
+      if (!input) return;
+      input.value = '';
+      const err = document.getElementById('authErrorMessage');
+      if (err) {
+        err.classList.add('hidden');
+        err.classList.remove('flex');
+      }
+      input.focus();
+    };
+
+    window.backspaceKeypad = function() {
+      const input = document.getElementById('authPasswordInput');
+      if (!input) return;
+      input.value = input.value.slice(0, -1);
+    };
+
+    window.lockPage = function() {
+      try {
+        sessionStorage.removeItem(AUTH_KEY);
+        localStorage.removeItem(AUTH_KEY);
+      } catch (e) {}
+
+      document.documentElement.classList.remove('is-authenticated');
+      document.documentElement.classList.add('is-locked');
+
+      const overlay = document.getElementById('authGateOverlay');
+      if (overlay) {
+        overlay.classList.remove('hidden');
+        overlay.style.transition = '';
+        overlay.style.opacity = '1';
+        overlay.style.transform = 'scale(1)';
+        overlay.style.pointerEvents = 'auto';
+      }
+
+      const input = document.getElementById('authPasswordInput');
+      if (input) {
+        input.value = '';
+        const err = document.getElementById('authErrorMessage');
+        if (err) {
+          err.classList.add('hidden');
+          err.classList.remove('flex');
+        }
+        setTimeout(() => input.focus(), 100);
+      }
+      lucide.createIcons();
+    };
+
     // State
     let currentSlideIndex = 0;
     let autoPlayTimer = null;
@@ -986,6 +1288,19 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
+
+      // Check Authentication Gate
+      if (!isAuthorized()) {
+        document.documentElement.classList.add('is-locked');
+        document.documentElement.classList.remove('is-authenticated');
+        const input = document.getElementById('authPasswordInput');
+        if (input) setTimeout(() => input.focus(), 150);
+      } else {
+        document.documentElement.classList.remove('is-locked');
+        document.documentElement.classList.add('is-authenticated');
+        const overlay = document.getElementById('authGateOverlay');
+        if (overlay) overlay.classList.add('hidden');
+      }
 
       // 1. Render Lesson Plan
       renderLessonPlan();
